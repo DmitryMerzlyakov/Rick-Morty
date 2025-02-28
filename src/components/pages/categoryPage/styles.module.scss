@@ -1,1 +1,7 @@
-
+.category {
+    display: grid;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+}

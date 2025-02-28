@@ -7,12 +7,14 @@ import { MortyImage, RickImage } from '@/assets/icons';
 export const MainLayout = () => {
   return (
     <div className={styles.mainLayout}>
-      <Header className={styles.mainLayout__header}/>
+      <Header className={styles.mainLayout__header} />
       <div className={styles.mainLayout__image}>
-        <RickImage className={styles.mainLayout__image_content}/>
-        <MortyImage className={styles.mainLayout__image_content}/>
+        <RickImage className={styles.mainLayout__image_content} />
+        <MortyImage className={styles.mainLayout__image_content} />
       </div>
-      <Outlet />
+      <div className={styles.mainLayout__body}>
+        <Outlet />
+      </div>
     </div>
   );
 };

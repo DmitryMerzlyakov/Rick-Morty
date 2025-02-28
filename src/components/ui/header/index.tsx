@@ -1,17 +1,21 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 
 import styles from './style.module.scss';
+import { Button } from '../button';
 
 interface IHeaderProps {
-  className?: string
+  className?: string;
 }
 
-export const Header = ({className}: IHeaderProps) => {
+export const Header = ({ className }: IHeaderProps) => {
   return (
     <header className={classNames(styles.header, className)}>
-      <button>Главная страница.</button>
-      <button>Страница категории.</button>
-      <button>Детальная страница элемента.</button>
+      <Button size="lg" variant="text">
+        Главная
+      </Button>
+      <Button size="lg" variant="text">
+        Категории
+      </Button>
     </header>
   );
 };
