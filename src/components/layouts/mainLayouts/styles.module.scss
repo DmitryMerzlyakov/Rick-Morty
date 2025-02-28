@@ -1,0 +1,28 @@
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: var(--color-background);
+  min-height: 100vh;
+  
+  &__header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1111;
+    position: fixed;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+    &_content {
+      fill: var(--linear--transparent-purple-100);
+    }
+  }
+}
