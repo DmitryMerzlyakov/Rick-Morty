@@ -1,12 +1,11 @@
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-export type ButtonSize = 'lg' | 'md' | 'sm';
+export type ButtonSize = 'xl' | 'md' | 'sm';
 export type ButtonVariant = 'full' | 'sides' | 'text';
-export type ButtonColor = 'primary' | 'secondary';
+export type ButtonColor = 'primary' | 'secondary' | 'text';
 
-export interface ButtonNewProps
-  extends React.ComponentPropsWithoutRef<'button'> {
+export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   /**
    * Additional class names to apply to the button
    */
@@ -43,7 +42,7 @@ export const Button = ({
   size = 'md',
   type = 'button',
   variant = 'full',
-}: ButtonNewProps) => {
+}: ButtonProps) => {
   return (
     <button
       className={classNames(
