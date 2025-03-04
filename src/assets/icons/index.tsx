@@ -36,8 +36,8 @@ const MortyImage = ({ className }: TIconProps) => {
 
 const HeroImage = ({ className, size = 'm' }: TIconProps) => {
   return (
-    <svg 
-      className={classNames(styles.icon, styles[size], className)}  
+    <svg
+      className={classNames(styles.icon, styles[size], className)}
       width="40"
       height="40"
       viewBox="0 0 50 50"

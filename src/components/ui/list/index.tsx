@@ -24,13 +24,13 @@ interface IListProps {
 export const List = ({ data, onClick, className }: IListProps) => {
   return (
     <ul className={classNames(styles.locations, className)}>
-      {data.map((item) => (
+      {data.map((item) =>
         <li>
           <Button variant="text" key={item.id} onClick={() => onClick(item.id as number)}>
             {item.name}
           </Button>
         </li>
-      ))}
+      )}
     </ul>
   );
 };

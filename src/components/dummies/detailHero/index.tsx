@@ -16,7 +16,7 @@ export const DetailHero = ({ data }: IDetailHeroProps) => {
         <p>Name: <strong>{data.name}</strong></p>
         <p>Gender: <strong>{data.gender}</strong></p>
         <div className={styles.detail__info_status}>
-          <Circle className={classNames(styles[`circle__${data.status}`])}/>
+          <Circle className={classNames(styles[`circle__${data.status}`])} />
           <p>{data.species}, {data.status}</p>
         </div>
       </div>

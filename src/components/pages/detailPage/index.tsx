@@ -6,7 +6,7 @@ import { PageWrapper } from '@/components/wrapper';
 import { PagesName } from '@/models/enums';
 import { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { IEpisode, IHero, ILocation } from '@/models/interfaces';
+import { IHero, TData } from '@/models/interfaces';
 
 export const DetailPage = () => {
   const { id } = useParams();
@@ -33,8 +33,8 @@ export const DetailPage = () => {
   return (
     <PageWrapper>
       {currentPage === PagesName.heroes && <DetailHero data={currentDetail(PagesName.heroes) as IHero} />}
-      {currentPage === PagesName.location && <DetailList data={currentDetail(PagesName.location) as ILocation}/>}
-      {currentPage === PagesName.episodes && <DetailList data={currentDetail(PagesName.episodes) as IEpisode}/>}
+      {currentPage === PagesName.location && <DetailList data={currentDetail(PagesName.location) as TData} />}
+      {currentPage === PagesName.episodes && <DetailList data={currentDetail(PagesName.episodes) as TData} />}
     </PageWrapper>
   );
 };

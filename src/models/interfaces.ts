@@ -24,3 +24,7 @@ export interface IEpisode {
   episode: string;
   created: string;
 }
+
+export type TData = {
+  [key: string]: string | number;
+};

@@ -21,34 +21,26 @@ export const CategoryPage = () => {
   return (
     <PageWrapper>
       {currentPage === PagesName.heroes &&
-        heroesData.map((hero) => (
+        heroesData.map((hero) =>
           <Hero
             key={hero.id}
             name={hero.name}
             image={hero.image}
-            onClick={() =>
-              navigate(`${links.heroesDetail}/${hero.id}`, {
-                state: links.heroes,
-              })
-            }
+            onClick={() => navigate(`${links.heroesDetail}/${hero.id}`, { state: links.heroes })}
           />
-        ))}
-      {currentPage === PagesName.location && (
+        )}
+      {currentPage === PagesName.location &&
         <List
           data={locationsData}
-          onClick={(id) =>
-            navigate(`${links.locationDetail}/${id}`, { state: links.location })
-          }
+          onClick={(id) => navigate(`${links.locationDetail}/${id}`, { state: links.location })}
         />
-      )}
-      {currentPage === PagesName.episodes && (
+      }
+      {currentPage === PagesName.episodes &&
         <List
           data={episodesData}
-          onClick={(id) =>
-            navigate(`${links.episodeDetail}/${id}`, { state: links.episode })
-          }
+          onClick={(id) => navigate(`${links.episodeDetail}/${id}`, { state: links.episode })}
         />
-      )}
+      }
     </PageWrapper>
   );
 };

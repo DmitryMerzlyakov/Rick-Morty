@@ -15,24 +15,16 @@
   --color-red: #ff4550;
 
   /* --- Размеры шрифтов --- */
-  --font-size-base: 1rem;
-  /* Базовый размер шрифта (16px) */
-  --font-size-sm: 0.875rem;
-  /* Маленький размер шрифта (14px) */
-  --font-size-s: 0.5rem;
-  /* Маленький размер шрифта (12px) */
-  --font-size-lg: 1.25rem;
-  /* Большой размер шрифта (20px) */
-  --font-size-xl: 1.5rem;
-  /* Очень большой размер шрифта (24px) */
+  --font-size-base: 1rem; /* Базовый размер шрифта (16px) */
+  --font-size-sm: 0.875rem; /* Маленький размер шрифта (14px) */
+  --font-size-s: 0.5rem; /* Маленький размер шрифта (12px) */
+  --font-size-lg: 1.25rem; /* Большой размер шрифта (20px) */
+  --font-size-xl: 1.5rem; /* Очень большой размер шрифта (24px) */
 
   /* --- Интервалы между строками --- */
-  --line-height-base: 1.5;
-  /* Базовый интервал между строками */
-  --line-height-sm: 1.25;
-  /* Маленький интервал */
-  --line-height-lg: 2;
-  /* Большой интервал */
+  --line-height-base: 1.5; /* Базовый интервал между строками */
+  --line-height-sm: 1.25; /* Маленький интервал */
+  --line-height-lg: 2; /* Большой интервал */
 
   /* --- Начертание шрифта --- */
   --fontWeight-100: 100;
@@ -46,60 +38,38 @@
   --fontWeight-900: 900;
 
   /* --- Шрифты --- */
-  --fonts-Bold: 'Poppins-Bold', sans-serif;
-  /* Основной шрифт */
-  --fonts-SemiBold: 'Poppins-SemiBold', sans-serif;
-  /*  */
-  --fonts-Medium: 'Poppins-Medium', sans-serif;
-  /* Поля ввода */
-  --fonts-Light: 'Poppins-Light', sans-serif;
-  /* */
-  --fonts-ExtraLight: 'Poppins-ExtraLight', sans-serif;
-  /* */
-  --fonts-Thin: 'Poppins-Thin', sans-serif;
-  /* Подсказки */
+  --fonts-Bold: 'Poppins-Bold', sans-serif; /* Основной шрифт */
+  --fonts-SemiBold: 'Poppins-SemiBold', sans-serif; /*  */
+  --fonts-Medium: 'Poppins-Medium', sans-serif; /* Поля ввода */
+  --fonts-Light: 'Poppins-Light', sans-serif; /* */
+  --fonts-ExtraLight: 'Poppins-ExtraLight', sans-serif; /* */
+  --fonts-Thin: 'Poppins-Thin', sans-serif; /* Подсказки */
 
   /* --- Отступы и размеры элементов --- */
-  --spacing-xs: 0.25rem;
-  /* Очень маленький отступ (4px) */
-  --spacing-sm: 0.5rem;
-  /* Маленький отступ (8px) */
-  --spacing-md: 1rem;
-  /* Средний отступ (16px) */
-  --spacing-lg: 1.5rem;
-  /* Большой отступ (24px) */
-  --spacing-xl: 2rem;
-  /* Очень большой отступ (32px) */
+  --spacing-xs: 0.25rem; /* Очень маленький отступ (4px) */
+  --spacing-sm: 0.5rem; /* Маленький отступ (8px) */
+  --spacing-md: 1rem; /* Средний отступ (16px) */
+  --spacing-lg: 1.5rem; /* Большой отступ (24px) */
+  --spacing-xl: 2rem; /* Очень большой отступ (32px) */
 
   /* --- Ширина контейнера --- */
-  --container-width-sm: 540px;
-  /* Для маленьких экранов */
-  --container-width-md: 720px;
-  /* Для средних экранов */
-  --container-width-lg: 960px;
-  /* Для больших экранов */
-  --container-width-xl: 1140px;
-  /* Для очень больших экранов */
+  --container-width-sm: 540px; /* Для маленьких экранов */
+  --container-width-md: 720px; /* Для средних экранов */
+  --container-width-lg: 960px; /* Для больших экранов */
+  --container-width-xl: 1140px; /* Для очень больших экранов */
 
   /* --- Ширина текста --- */
-  --text-max-width: 70ch;
-  /* Максимальная ширина текста для комфортного чтения */
-  --text-line-length: 60ch;
-  /* Рекомендуемая длина строки для читаемости */
+  --text-max-width: 70ch; /* Максимальная ширина текста для комфортного чтения */
+  --text-line-length: 60ch; /* Рекомендуемая длина строки для читаемости */
 
   /* --- Радиусы скругления --- */
-  --border-radius-sm: 0.25rem;
-  /* Маленький радиус */
-  --border-radius-md: 0.5rem;
-  /* Средний радиус */
-  --border-radius-lg: 1rem;
-  /* Большой радиус */
+  --border-radius-sm: 0.25rem; /* Маленький радиус */
+  --border-radius-md: 0.5rem; /* Средний радиус */
+  --border-radius-lg: 1rem; /* Большой радиус */
 
   /* --- Тени --- */
-  --box-shadow-sm: 2px 2px 4px var(--color-gray-3);
-  /* Лёгкая тень */
-  --box-shadow-md: 2px 4px 8px var(--color-gray-3);
-  /* Средняя тень */
+  --box-shadow-sm: 2px 2px 4px var(--color-gray-3); /* Лёгкая тень */
+  --box-shadow-md: 2px 4px 8px var(--color-gray-3); /* Средняя тень */
 }
 
 * {

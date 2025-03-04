@@ -10,20 +10,20 @@
     gap: var(--spacing-sm);
 
     &_status {
-        display: flex;
-        gap: var(--spacing-sm);
+      display: flex;
+      gap: var(--spacing-sm);
     }
   }
 }
 
 .circle__Dead {
-    fill: var(--color-red);
+  fill: var(--color-red);
 }
 
 .circle__Alive {
-    fill: var(--color-green);
+  fill: var(--color-green);
 }
 
 .circle__unknown {
-    fill: var(--color-gray-3);
+  fill: var(--color-gray-3);
 }

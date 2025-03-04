@@ -8,20 +8,20 @@ const error = '*';
 const heroesNavigate = '/heroes/*';
 const heroes = 'heroes';
 const heroesDetail = '/heroes/detail';
-const heroesDetailById = '/heroes/detail/:id'
+const heroesDetailById = '/heroes/detail/:id';
 
 /* Эпизоды */
 const episodeNavigate = '/episodes/*';
 const episode = 'episodes';
 const episodeDetail = '/episodes/detail';
-const episodeDetailById = '/episodes/detail/:id'
+const episodeDetailById = '/episodes/detail/:id';
 
 
 /* Локации */
 const locationNavigate = '/locations/*';
 const location = 'locations';
 const locationDetail = '/locations/detail';
-const locationDetailById = '/locations/detail/:id'
+const locationDetailById = '/locations/detail/:id';
 
 
 const heroesLinks = {
