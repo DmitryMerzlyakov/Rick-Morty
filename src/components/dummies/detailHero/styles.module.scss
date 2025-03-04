@@ -1,0 +1,29 @@
+.detail {
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-xl);
+  justify-content: center;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+
+    &_status {
+        display: flex;
+        gap: var(--spacing-sm);
+    }
+  }
+}
+
+.circle__Dead {
+    fill: var(--color-red);
+}
+
+.circle__Alive {
+    fill: var(--color-green);
+}
+
+.circle__unknown {
+    fill: var(--color-gray-3);
+}

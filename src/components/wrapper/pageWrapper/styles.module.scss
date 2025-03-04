@@ -1,12 +1,4 @@
-.wrapper__grid {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    margin-top: var(--spacing-lg);
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.wrapper__flex {
+.wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

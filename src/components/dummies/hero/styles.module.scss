@@ -1,4 +1,4 @@
-.person {
+.hero {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
@@ -16,11 +16,10 @@
         height: 50%;
         border-radius: var(--border-radius-md);
     }
-
-}
-
-.person:hover {
-    transition: all .3s;
-    box-sizing: border-box;
-    box-shadow: var(--box-shadow-sm);
+    
+    &:hover {
+        transition: all .3s;
+        box-sizing: border-box;
+        box-shadow: var(--box-shadow-sm);
+    }
 }

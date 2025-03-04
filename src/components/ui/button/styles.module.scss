@@ -48,6 +48,10 @@
         color: var(--color-background);
     }
 
+    &__purple {
+        color: var(--color-purple);
+    }
+
     &:disabled {
         cursor: auto;
         background-color: var(--color-gray-3);
@@ -56,5 +60,6 @@
 
     &:hover {
         font-weight: var(--fontWeight-700);
+        color: var(--color-orange);
     }
 }

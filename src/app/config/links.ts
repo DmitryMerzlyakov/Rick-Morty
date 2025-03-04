@@ -6,35 +6,43 @@ const error = '*';
 
 /* Герои */
 const heroesNavigate = '/heroes/*';
-const heroes = '/heroes';
-const heroesDetail = '/heroes/:name';
+const heroes = 'heroes';
+const heroesDetail = '/heroes/detail';
+const heroesDetailById = '/heroes/detail/:id'
 
 /* Эпизоды */
 const episodeNavigate = '/episodes/*';
-const episode = '/episodes';
-const episodeDetail = '/episodes/:name';
+const episode = 'episodes';
+const episodeDetail = '/episodes/detail';
+const episodeDetailById = '/episodes/detail/:id'
+
 
 /* Локации */
 const locationNavigate = '/locations/*';
-const location = '/locations';
-const locationDetail = '/locations/:name';
+const location = 'locations';
+const locationDetail = '/locations/detail';
+const locationDetailById = '/locations/detail/:id'
+
 
 const heroesLinks = {
   heroesNavigate,
   heroes,
   heroesDetail,
+  heroesDetailById
 };
 
 const episodeLinks = {
   episodeNavigate,
   episode,
   episodeDetail,
+  episodeDetailById
 };
 
 const locationLinks = {
   locationNavigate,
   location,
   locationDetail,
+  locationDetailById
 };
 
 export const links = {

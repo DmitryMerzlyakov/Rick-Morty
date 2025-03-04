@@ -7,9 +7,9 @@
   overflow: hidden;
 
   &__header {
-    width: 80%;
+    width: 100%;
     top: 0;
-    left: 10%;
+    left: 0;
     z-index: 1111;
     position: fixed;
   }
@@ -31,8 +31,7 @@
   &__body {
     flex: 1;
     z-index: 1110;
-    margin-top: 76px;
-    padding: 0 15%;
+    padding: 76px 15% 0 15%;
     overflow-y: auto;
   }
 }

@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 
 export type ButtonSize = 'xl' | 'md' | 'sm';
 export type ButtonVariant = 'full' | 'sides' | 'text';
-export type ButtonColor = 'primary' | 'secondary' | 'text';
+export type ButtonColor = 'primary' | 'secondary' | 'purple';
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   /**

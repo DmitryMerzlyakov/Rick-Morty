@@ -2,8 +2,9 @@ import classNames from 'classnames';
 
 import styles from './style.module.scss';
 import { useNavigate } from 'react-router-dom';
-import { links } from '@/app/config/links';
+import { links } from '@/app/config/';
 import { Button } from '..';
+import { HeroImage } from '@/assets/icons';
 
 interface IHeaderProps {
   /**
@@ -17,38 +18,41 @@ export const Header = ({ className }: IHeaderProps) => {
 
   return (
     <header className={classNames(styles.header, className)}>
-      <Button
-        size="xl"
-        variant="text"
-        color="text"
-        onClick={() => navigate(links.main)}
-      >
-        Главная
-      </Button>
-      <Button
-        size="xl"
-        variant="text"
-        color="text"
-        onClick={() => navigate(links.heroes)}
-      >
-        Герои
-      </Button>
-      <Button
-        size="xl"
-        variant="text"
-        color="text"
-        onClick={() => navigate(links.location)}
-      >
-        Локации
-      </Button>
-      <Button
-        size="xl"
-        variant="text"
-        color="text"
-        onClick={() => navigate(links.episode)}
-      >
-        Эпизоды
-      </Button>
+      <HeroImage size="xl" className={styles.header__logo} />
+      <div>
+        <Button
+          size="md"
+          variant="text"
+          color="purple"
+          onClick={() => navigate(links.main)}
+        >
+          Главная
+        </Button>
+        <Button
+          size="md"
+          variant="text"
+          color="purple"
+          onClick={() => navigate(links.heroes)}
+        >
+          Герои
+        </Button>
+        <Button
+          size="md"
+          variant="text"
+          color="purple"
+          onClick={() => navigate(links.location)}
+        >
+          Локации
+        </Button>
+        <Button
+          size="md"
+          variant="text"
+          color="purple"
+          onClick={() => navigate(links.episode)}
+        >
+          Эпизоды
+        </Button>
+      </div>
     </header>
   );
 };
