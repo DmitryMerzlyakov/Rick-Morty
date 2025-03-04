@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+  padding: var(--spacing-md) var(--spacing-lg);
+
+  &__logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    fill: var(--color-purple);
+  }
+}

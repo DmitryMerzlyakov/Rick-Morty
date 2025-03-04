@@ -1,2 +1,3 @@
 export * from './mainPage';
-export * from './category';
+export * from './categoryPage';
+export * from './detailPage';
