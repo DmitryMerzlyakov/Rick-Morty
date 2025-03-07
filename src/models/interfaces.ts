@@ -28,3 +28,8 @@ export interface IEpisode {
 export type TData = {
   [key: string]: string | number;
 };
+
+export interface IUser {
+  name: string;
+  nickName: string;
+}

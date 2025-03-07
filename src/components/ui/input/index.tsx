@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import classNames from 'classnames';
 
 export type TLabelPosition = 'bottom' | 'left' | 'right' | 'top';
@@ -47,25 +47,23 @@ export interface IInputProps {
    * The input value
    * */
   value?: string;
-  /**
-   * The input ref
-   * */
-  ref: React.RefObject<HTMLInputElement>;
 }
 
-export const Input = ({
-  isError = false,
-  type = 'text',
-  value,
-  labelPosition = 'top',
-  onChange,
-  label,
-  hint,
-  inputPlaceholder,
-  id,
-  name,
-  ref,
-}: IInputProps) => {
+export const Input = (
+  {
+    isError = false,
+    type = 'text',
+    value,
+    labelPosition = 'top',
+    onChange,
+    label,
+    hint,
+    inputPlaceholder,
+    id,
+    name,
+  }: IInputProps,
+  ref: React.RefObject<HTMLInputElement>
+) => {
   return (
     <div
       className={classNames(

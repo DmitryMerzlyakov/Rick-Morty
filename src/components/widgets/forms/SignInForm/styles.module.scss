@@ -1,0 +1,11 @@
+.signin {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}

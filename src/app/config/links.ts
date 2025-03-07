@@ -4,6 +4,9 @@ const main = '/';
 /* Не существующая страница */
 const error = '*';
 
+/* Страница авторизации */
+const login = '/login';
+
 /* Герои */
 const heroesNavigate = '/heroes/*';
 const heroes = 'heroes';
@@ -51,4 +54,5 @@ export const links = {
   ...locationLinks,
   error,
   main,
+  login
 };
