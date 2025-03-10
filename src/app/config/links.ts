@@ -5,7 +5,7 @@ const main = '/';
 const error = '*';
 
 /* Страница авторизации */
-const login = '/login';
+const login = 'login';
 
 /* Герои */
 const heroesNavigate = '/heroes/*';

@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: var(--spacing-sm);
 }
 
 .labelPosition__right {
@@ -28,7 +28,7 @@
 .input_wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: var(--spacing-sm);
 }
 
 .input {
@@ -37,8 +37,8 @@
 
 .input_hint {
   line-height: 16px;
-  align-self: flex-start;
-  color: #ff4550;
+  text-align: center;
+  color: var(--color-red);
 }
 
 .labelPosition__right .input_icon {
@@ -52,13 +52,13 @@
 }
 
 .wrapperError .input {
-  border-color: #ff4550;
+  border-color: var(--color-red);
 }
 
 .wrapperError .input::placeholder {
-  color: #ff4550;
+  color: var(--color-red);
 }
 
 .wrapperError .input_hint {
-  color: #ff4550;
+  color: var(--color-red);
 }

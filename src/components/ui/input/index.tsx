@@ -49,7 +49,7 @@ export interface IInputProps {
   value?: string;
 }
 
-export const Input = (
+export const Input = React.forwardRef((
   {
     isError = false,
     type = 'text',
@@ -62,7 +62,7 @@ export const Input = (
     id,
     name,
   }: IInputProps,
-  ref: React.RefObject<HTMLInputElement>
+  ref: React.ForwardedRef<HTMLInputElement>
 ) => {
   return (
     <div
@@ -94,4 +94,4 @@ export const Input = (
       </div>
     </div>
   );
-};
+});

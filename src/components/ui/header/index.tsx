@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { links } from '@/app/config/';
 import { Button } from '..';
 import { HeroImage } from '@/assets/icons';
+import { useAuth } from '@/hooks/useAuth';
+import { AuthContext } from '@/models/constants';
 
 interface IHeaderProps {
   /**
@@ -15,6 +17,7 @@ interface IHeaderProps {
 
 export const Header = ({ className }: IHeaderProps) => {
   const navigate = useNavigate();
+  const auth = useAuth({ context: AuthContext });
 
   return (
     <header className={classNames(styles.header, className)}>
@@ -52,6 +55,16 @@ export const Header = ({ className }: IHeaderProps) => {
         >
           Эпизоды
         </Button>
+      </div>
+      <div className={styles.header__user}>
+        {auth.user?.name && (
+          <Button
+            variant="text"
+            onClick={() => auth.signOut(() => navigate(links.main))}
+          >
+            {auth.user?.nickName}
+          </Button>
+        )}
       </div>
     </header>
   );
