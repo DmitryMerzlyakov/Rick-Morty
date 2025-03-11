@@ -13,11 +13,11 @@
   --color-background: #f3f4ff;
   --color-green: #4cbc9a;
   --color-red: #ff4550;
-  --linear--transparent-purple-100: rgba(77, 68, 181, 0.1);
 
   /* --- Размеры шрифтов --- */
   --font-size-base: 1rem; /* Базовый размер шрифта (16px) */
   --font-size-sm: 0.875rem; /* Маленький размер шрифта (14px) */
+  --font-size-s: 0.5rem; /* Маленький размер шрифта (12px) */
   --font-size-lg: 1.25rem; /* Большой размер шрифта (20px) */
   --font-size-xl: 1.5rem; /* Очень большой размер шрифта (24px) */
 
@@ -68,8 +68,8 @@
   --border-radius-lg: 1rem; /* Большой радиус */
 
   /* --- Тени --- */
-  --box-shadow-sm: 0 2px 4px var(--linear--transparent-purple-100); /* Лёгкая тень */
-  --box-shadow-md: 0 4px 8px var(--linear--transparent-purple-100); /* Средняя тень */
+  --box-shadow-sm: 2px 2px 4px var(--color-gray-3); /* Лёгкая тень */
+  --box-shadow-md: 2px 4px 8px var(--color-gray-3); /* Средняя тень */
 }
 
 * {
@@ -92,7 +92,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   color: var(--color-text);
 }
 
