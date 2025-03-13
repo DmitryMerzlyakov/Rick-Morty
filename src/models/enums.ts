@@ -1,9 +1,3 @@
-export enum PagesName {
-  heroes = 'heroes',
-  episodes = 'episodes',
-  location = 'locations',
-}
-
 export enum EpisodeKeyName {
   name = 'Имя',
   air_date = 'Выход в эфир',

@@ -1,3 +1,3 @@
-export * from './hero';
+export * from './card';
 export * from './detailHero';
 export * from './detailList';

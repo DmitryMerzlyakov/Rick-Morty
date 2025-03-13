@@ -1,18 +1,24 @@
 import { Hero } from '@/components/dummies';
-import heroesData from '@/data/characters.json';
-import episodesData from '@/data/episode.json';
-import locationsData from '@/data/location.json';
+// import heroesData from '@/data/characters.json';
+// import episodesData from '@/data/episode.json';
+// import locationsData from '@/data/location.json';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { PageWrapper } from '@/components/wrapper';
-import { List } from '@/components/ui';
+// import { List } from '@/components/ui';
 import { links } from '@/app/config';
 import { useEffect, useState } from 'react';
-import { PagesName } from '@/models/enums';
+// import { PagesName } from '@/models/enums';
+import { useAxiosGet } from '@/hooks/useAxiosGet';
 
 export const CategoryPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState<string>('');
+
+  const { data } = useAxiosGet('character') 
+
+  console.log(data);
+  
 
   useEffect(() => {
     setCurrentPage(location.pathname.split('/').join(''));
@@ -20,16 +26,17 @@ export const CategoryPage = () => {
 
   return (
     <PageWrapper>
-      {currentPage === PagesName.heroes &&
-        heroesData.map((hero) =>
+      {
+        data?.map((hero) =>
           <Hero
             key={hero.id}
             name={hero.name}
             image={hero.image}
+            species={hero.species}
             onClick={() => navigate(`${links.heroesDetail}/${hero.id}`, { state: links.heroes })}
           />
         )}
-      {currentPage === PagesName.location &&
+      {/* {currentPage === PagesName.location &&
         <List
           data={locationsData}
           onClick={(id) => navigate(`${links.locationDetail}/${id}`, { state: links.location })}
@@ -40,7 +47,7 @@ export const CategoryPage = () => {
           data={episodesData}
           onClick={(id) => navigate(`${links.episodeDetail}/${id}`, { state: links.episode })}
         />
-      }
+      } */}
     </PageWrapper>
   );
 };

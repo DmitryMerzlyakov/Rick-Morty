@@ -21,42 +21,8 @@ export const Header = ({ className }: IHeaderProps) => {
 
   return (
     <header className={classNames(styles.header, className)}>
-      <HeroImage size="xl" className={styles.header__logo} />
-      <div>
-        <Button
-          size="md"
-          variant="text"
-          color="purple"
-          onClick={() => navigate(links.main)}
-        >
-          Главная
-        </Button>
-        <Button
-          size="md"
-          variant="text"
-          color="purple"
-          onClick={() => navigate(links.heroes)}
-        >
-          Герои
-        </Button>
-        <Button
-          size="md"
-          variant="text"
-          color="purple"
-          onClick={() => navigate(links.location)}
-        >
-          Локации
-        </Button>
-        <Button
-          size="md"
-          variant="text"
-          color="purple"
-          onClick={() => navigate(links.episode)}
-        >
-          Эпизоды
-        </Button>
-      </div>
-      <div className={styles.header__user}>
+      <div className={styles.header__content}>
+        <HeroImage size="xl" className={styles.header__content_logo} />
         {auth.user?.name && (
           <Button
             variant="text"
@@ -65,6 +31,40 @@ export const Header = ({ className }: IHeaderProps) => {
             {auth.user?.nickName}
           </Button>
         )}
+      </div>
+      <div>
+        <Button
+          size="md"
+          variant="text"
+          color="purple"
+          onClick={() => navigate(links.main)}
+        >
+          Home
+        </Button>
+        <Button
+          size="md"
+          variant="text"
+          color="purple"
+          onClick={() => navigate(links.heroes)}
+        >
+          Characters
+        </Button>
+        <Button
+          size="md"
+          variant="text"
+          color="purple"
+          onClick={() => navigate(links.location)}
+        >
+          Locations
+        </Button>
+        <Button
+          size="md"
+          variant="text"
+          color="purple"
+          onClick={() => navigate(links.episode)}
+        >
+          Episodes
+        </Button>
       </div>
     </header>
   );

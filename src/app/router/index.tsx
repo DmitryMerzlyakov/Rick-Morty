@@ -1,14 +1,8 @@
 import { MainLayout, SignInLayout } from '@/components/layouts';
-import {
-  CategoryPage,
-  DetailPage,
-  MainPage,
-  LoginPage,
-  ErrorPage,
-} from '@/components/pages';
+import { CategoryPage, DetailPage, MainPage } from '@/components/pages';
 import { Route, Routes } from 'react-router-dom';
 import { links } from '@/app/config';
-import { PrivateRouteWrapper } from '@/components/wrapper';
+import { LazyPage } from '@/components/wrapper/lazyLoadWrapper';
 
 export const AppRoutes = () => {
   return (
@@ -18,23 +12,23 @@ export const AppRoutes = () => {
         <Route
           path=":category"
           element={
-            <PrivateRouteWrapper>
-              <CategoryPage />
-            </PrivateRouteWrapper>
+            // <PrivateRouteWrapper>
+              <CategoryPage/>
+            // </PrivateRouteWrapper>
           }
         />
         <Route
           path=":category/detail/:id"
           element={
-            <PrivateRouteWrapper>
+            // <PrivateRouteWrapper>
               <DetailPage />
-            </PrivateRouteWrapper>
+            // </PrivateRouteWrapper>
           }
         />
       </Route>
-      <Route path={links.error} element={<ErrorPage />} />
+      <Route path={links.error} element={<LazyPage page="ErrorPage" />} />
       <Route path={links.login} element={<SignInLayout />}>
-        <Route index element={<LoginPage />} />
+        <Route index element={<LazyPage page="LoginPage" />} />
       </Route>
     </Routes>
   );

@@ -2,7 +2,7 @@ import { Header } from '@/components/ui';
 import { Outlet } from 'react-router-dom';
 
 import styles from './styles.module.scss';
-import { MortyImage, RickImage } from '@/assets/icons';
+import { MortyImage, RickImage, TitleImage } from '@/assets/icons';
 
 export const MainLayout = () => {
   return (
@@ -13,6 +13,7 @@ export const MainLayout = () => {
         <MortyImage className={styles.mainLayout__image_content} />
       </div>
       <div className={styles.mainLayout__body}>
+        <TitleImage className={styles.mainLayout__body_img}/>
         <Outlet />
       </div>
     </div>

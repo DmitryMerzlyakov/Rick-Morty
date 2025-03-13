@@ -7,31 +7,39 @@
   overflow: hidden;
 
   &__header {
-    width: 100%;
     top: 0;
     left: 0;
+    width: 100%;
     z-index: 1111;
     position: fixed;
   }
 
   &__image {
-    position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    position: absolute;
     align-items: flex-end;
+    justify-content: space-between;
 
     &_content {
-      fill: var(--color-gray-3);
-      opacity: 0.2;
+      fill: var(--color-border);
+      opacity: 0.3;
     }
   }
 
   &__body {
     flex: 1;
     z-index: 1110;
-    padding: 76px 15% 0 15%;
+    display: flex;
     overflow-y: auto;
+    align-items: center;
+    padding: 85px 15% 0 15%;
+    flex-direction: column;
+
+    &_img {
+      width: 500px;
+      height: 150px;
+    }
   }
 }
