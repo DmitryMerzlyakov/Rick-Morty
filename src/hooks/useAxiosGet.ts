@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { BASE_URL } from '@/models/constants';
-import { IGeneralQuery, IHero, TApiResources } from '@/models/interfaces';
+import { IGeneralQuery, TApiResources } from '@/models/interfaces';
 
-export const useAxiosGet = (
+export const useAxiosGet = <T>(
   resource: TApiResources,
   currentPage?: number,
   query?: IGeneralQuery
 ) => {
-  const [data, setData] = useState<IHero[] | null>(null);
+  const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setLoading(prev => !prev)
+    setLoading((prev) => !prev);
     axios({
       method: 'GET',
       url: `${BASE_URL}/${resource}`,
@@ -22,7 +22,7 @@ export const useAxiosGet = (
       },
     }).then((response) => {
       setData(response.data.results);
-      setLoading(prev => !prev)
+      setLoading((prev) => !prev);
     });
   }, [resource, currentPage, query]);
 

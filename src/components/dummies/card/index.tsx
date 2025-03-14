@@ -1,22 +1,40 @@
 import { Button } from '@/components/ui';
 import styles from './styles.module.scss';
 
-interface IHeroProps {
+interface IInfoCardProps {
   name: string;
-  image: string;
-  species: string;
-  onClick: () => void;
+  type?: string;
+  image?: string;
+  species?: string;
+  dimension?: string;
+  air_date?: string;
+  onClick?: () => void;
 }
 
-export const Hero = ({ name, image, onClick, species }: IHeroProps) => {
+export const InfoCard = ({
+  name,
+  image,
+  onClick,
+  species,
+  air_date,
+  dimension,
+  type,
+}: IInfoCardProps) => {
   return (
     <div className={styles.hero} onClick={onClick}>
       {image && <img className={styles.hero__image} src={image} alt={name} />}
       <Button variant="text">
         <div className={styles.hero__name}>
-          <p>{name}</p>
-          <p className={styles.hero__name_species}>{species}</p>
-        </div> 
+          <p>Name: {name}</p>
+          {species && <p className={styles.hero__name_info}>{species}</p>}
+          {type && <p className={styles.hero__name_info}>Type: {type}</p>}
+          {dimension && (
+            <p className={styles.hero__name_info}>Dimension: {dimension}</p>
+          )}
+          {air_date && (
+            <p className={styles.hero__name_info}>Air date: {air_date}</p>
+          )}
+        </div>
       </Button>
     </div>
   );

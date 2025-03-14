@@ -84,8 +84,23 @@ const ErrorImage = ({ className, children }: TIconProps) => {
   );
 };
 
-const TitleImage = ({className}: TIconProps) => {
-  return <img src={title} className={classNames(className)}/>;
+const TitleImage = ({ className }: TIconProps) => {
+  return <img src={title} className={classNames(className)} />;
+};
+
+const ArrowImage = ({ className, size = 'm' }: TIconProps) => {
+  return (
+    <svg
+      className={classNames(styles.icon, styles[size], className)}
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
+        fill="black"
+      />
+    </svg>
+  );
 };
 
 export {
@@ -95,4 +110,5 @@ export {
   CircleImage,
   ErrorImage,
   TitleImage,
+  ArrowImage
 };

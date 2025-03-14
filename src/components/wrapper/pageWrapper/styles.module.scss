@@ -1,8 +1,15 @@
-.wrapper {
+.wrapper__flex {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--spacing-lg);
   justify-content: center;
-  margin-top: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.wrapper__grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  grid-template-columns: repeat(3, 1fr);
 }

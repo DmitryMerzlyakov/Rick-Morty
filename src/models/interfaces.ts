@@ -54,7 +54,7 @@ export type TPageKeys =
   | 'LoginPage'
   | 'ErrorPage';
 
-export type TApiResources = 'character' | 'locations' | 'episodes';
+export type TApiResources = 'character' | 'location' | 'episode';
 
 export type THeroStatus = 'alive' | 'dead' | 'unknown';
 

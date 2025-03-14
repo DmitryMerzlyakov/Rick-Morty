@@ -53,7 +53,7 @@ export const Header = ({ className }: IHeaderProps) => {
           size="md"
           variant="text"
           color="purple"
-          onClick={() => navigate(links.location)}
+          onClick={() => navigate(links.locations)}
         >
           Locations
         </Button>
@@ -61,7 +61,7 @@ export const Header = ({ className }: IHeaderProps) => {
           size="md"
           variant="text"
           color="purple"
-          onClick={() => navigate(links.episode)}
+          onClick={() => navigate(links.episodes)}
         >
           Episodes
         </Button>
