@@ -1,7 +1,7 @@
 import { createContext, lazy } from 'react';
 import { IAuthProviderValue, TPageKeys } from './interfaces';
 
-export const BASE_URL = 'https://rickandmortyapi.com/api'; 
+export const BASE_URL = 'https://rickandmortyapi.com/api';
 
 export const AuthContext = createContext<IAuthProviderValue | null>(null);
 

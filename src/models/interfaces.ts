@@ -69,3 +69,9 @@ export interface IGeneralQuery {
   dimension?: string;
   episode?: number | number[];
 }
+
+export interface IAxiosGetByIdParams {
+  resource: TApiResources;
+  id?: number;
+  // type: IHero | ILocation | IEpisode;
+}

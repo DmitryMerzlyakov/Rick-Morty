@@ -1,12 +1,12 @@
-import { Button } from '@/components/ui';
+import { Button, Title } from '@/components/ui';
 import styles from './styles.module.scss';
+import { SubTitle } from '@/components/ui/subtitle';
 
 interface IInfoCardProps {
   name: string;
   type?: string;
   image?: string;
   species?: string;
-  dimension?: string;
   air_date?: string;
   onClick?: () => void;
 }
@@ -17,7 +17,6 @@ export const InfoCard = ({
   onClick,
   species,
   air_date,
-  dimension,
   type,
 }: IInfoCardProps) => {
   return (
@@ -25,15 +24,10 @@ export const InfoCard = ({
       {image && <img className={styles.hero__image} src={image} alt={name} />}
       <Button variant="text">
         <div className={styles.hero__name}>
-          <p>Name: {name}</p>
-          {species && <p className={styles.hero__name_info}>{species}</p>}
-          {type && <p className={styles.hero__name_info}>Type: {type}</p>}
-          {dimension && (
-            <p className={styles.hero__name_info}>Dimension: {dimension}</p>
-          )}
-          {air_date && (
-            <p className={styles.hero__name_info}>Air date: {air_date}</p>
-          )}
+          <Title>Name: {name}</Title>
+          {species && <SubTitle>{species}</SubTitle>}
+          {type && <SubTitle>Type: {type}</SubTitle>}
+          {air_date && <SubTitle>Air date: {air_date}</SubTitle>}
         </div>
       </Button>
     </div>

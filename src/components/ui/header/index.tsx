@@ -47,7 +47,7 @@ export const Header = ({ className }: IHeaderProps) => {
           color="purple"
           onClick={() => navigate(links.heroes)}
         >
-          Characters
+          Heroes
         </Button>
         <Button
           size="md"

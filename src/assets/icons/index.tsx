@@ -1,7 +1,8 @@
 import { SVGAttributes } from 'react';
 import classNames from 'classnames';
 import styles from './styles.module.scss';
-import title from './title.png';
+import title from './image/title.png';
+import portal from './image/portal.png';
 
 type TIconProps = SVGAttributes<SVGElement> & { size?: 's' | 'm' | 'l' | 'xl' };
 
@@ -84,6 +85,12 @@ const ErrorImage = ({ className, children }: TIconProps) => {
   );
 };
 
+const PortalImage = ({ className }: TIconProps) => {
+  return (
+    <img src={portal} className={classNames(className)} />
+  )
+}
+
 const TitleImage = ({ className }: TIconProps) => {
   return <img src={title} className={classNames(className)} />;
 };
@@ -110,5 +117,6 @@ export {
   CircleImage,
   ErrorImage,
   TitleImage,
-  ArrowImage
+  ArrowImage,
+  PortalImage
 };

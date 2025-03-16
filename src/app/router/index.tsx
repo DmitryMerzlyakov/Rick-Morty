@@ -13,7 +13,7 @@ export const AppRoutes = () => {
           path={links.heroes}
           element={
             // <PrivateRouteWrapper>
-              <HeroesPage/>
+            <HeroesPage />
             // </PrivateRouteWrapper>
           }
         />
@@ -21,7 +21,7 @@ export const AppRoutes = () => {
           path={links.locations}
           element={
             // <PrivateRouteWrapper>
-              <LocationsPage/>
+            <LocationsPage />
             // </PrivateRouteWrapper>
           }
         />
@@ -29,15 +29,15 @@ export const AppRoutes = () => {
           path={links.episodes}
           element={
             // <PrivateRouteWrapper>
-              <EpisodesPage/>
+            <EpisodesPage />
             // </PrivateRouteWrapper>
           }
         />
         <Route
-          path=":resource/detail/:id"
+          path={`:resource/${links.detail}/:id`}
           element={
             // <PrivateRouteWrapper>
-              <DetailPage />
+            <DetailPage />
             // </PrivateRouteWrapper>
           }
         />

@@ -3,26 +3,20 @@
   flex-direction: column;
   background: var(--color-background);
   border-radius: var(--border-radius-md);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
 
   &__name {
+    height: 65px;
     display: flex;
     padding-bottom: 0;
     text-align: start;
     gap: var(--spacing-sm);
     flex-direction: column;
-    font-size: var(--font-size-base);
-
-    &_info {
-      text-align: start;
-      color: var(--color-subtext);
-    }
-
+    justify-content: center;
   }
 
   &__image {
-    width: 250px;
-    height: 250px;
     border-top-left-radius: var(--border-radius-md);
     border-top-right-radius: var(--border-radius-md);
   }
