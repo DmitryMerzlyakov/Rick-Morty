@@ -34,7 +34,7 @@
   --fontWeight-900: 900;
 
   /* --- Шрифты --- */
-  --fonts-Bold: "Karla", sans-serif; 
+  --fonts-Bold: 'Karla', sans-serif;
 
   /* --- Отступы и размеры элементов --- */
   --spacing-xs: 0.25rem; /* Очень маленький отступ (4px) */
@@ -70,6 +70,8 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-subtext) var(--color-border);
 }
 
 body {
@@ -109,4 +111,23 @@ button {
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: var(--spacing-sm);
+  height: var(--spacing-sm);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-subtext);
+  border-radius: var(--border-radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-hover);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-border);
+  border-radius: var(--border-radius-md);
 }

@@ -23,8 +23,7 @@ export const HeroesPage = () => {
             onClick={() => navigate(`${links.detail}/${hero.id}`, {
               state: {
                 id: hero.id,
-                type: 'hero',
-                resource: 'character'
+                type: 'hero'
               }
             })}
           />

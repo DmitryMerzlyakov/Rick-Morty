@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import styles from './styles.module.scss';
 import title from './image/title.png';
 import portal from './image/portal.png';
+import location from './image/location.png';
 
 type TIconProps = SVGAttributes<SVGElement> & { size?: 's' | 'm' | 'l' | 'xl' };
 
@@ -89,7 +90,7 @@ const PortalImage = ({ className }: TIconProps) => {
   return (
     <img src={portal} className={classNames(className)} />
   )
-}
+};
 
 const TitleImage = ({ className }: TIconProps) => {
   return <img src={title} className={classNames(className)} />;
@@ -110,6 +111,12 @@ const ArrowImage = ({ className, size = 'm' }: TIconProps) => {
   );
 };
 
+const LocationImage = ({ className }: TIconProps) => {
+  return (
+    <img src={location} className={classNames(className)} />
+  )
+};
+
 export {
   MortyImage,
   RickImage,
@@ -118,5 +125,6 @@ export {
   ErrorImage,
   TitleImage,
   ArrowImage,
-  PortalImage
+  PortalImage,
+  LocationImage
 };
