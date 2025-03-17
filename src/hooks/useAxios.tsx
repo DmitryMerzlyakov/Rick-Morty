@@ -9,22 +9,18 @@ import {
   TApiResources,
 } from '@/models/interfaces';
 
-type ResourceType = '' | 'episode' | 'location'
-
 interface ResourceMap {
-  character: IHero[],
-  episode: IEpisode[],
-  location: ILocation[]
+  character: IHero[];
+  episode: IEpisode[];
+  location: ILocation[];
 }
 
 export const useAxios = () => {
-
   const useAxiosGet = (
     resource: TApiResources,
     currentPage?: number,
     query?: IGeneralQuery
   ) => {
-
     const [data, setData] = useState<ResourceMap[typeof resource] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -47,7 +43,7 @@ export const useAxios = () => {
   };
 
   const useAxiosGetLocationById = (id: number | number[]) => {
-    const [locationById, setLocationById] = useState<ILocation | ILocation[]>();
+    const [locationById, setLocationById] = useState<ILocation | ILocation[] | null>(null);
     const [loadingById, setLoadingById] = useState<boolean>(true);
 
     useEffect(() => {
@@ -83,9 +79,7 @@ export const useAxios = () => {
   };
 
   const useAxiosGetEpisodeById = (id: number | number[]) => {
-    const [episodeById, setEpisodeById] = useState<IEpisode | IEpisode[] | null>(
-      null
-    );
+    const [episodeById, setEpisodeById] = useState<IEpisode | IEpisode[] | null>(null);
     const [loadingById, setLoadingById] = useState<boolean>(true);
 
     useEffect(() => {
@@ -102,5 +96,10 @@ export const useAxios = () => {
     return { episodeById, loadingById };
   };
 
-  return { useAxiosGet, useAxiosGetLocationById, useAxiosGetHeroesById, useAxiosGetEpisodeById }
-}
+  return {
+    useAxiosGet,
+    useAxiosGetLocationById,
+    useAxiosGetHeroesById,
+    useAxiosGetEpisodeById,
+  };
+};
