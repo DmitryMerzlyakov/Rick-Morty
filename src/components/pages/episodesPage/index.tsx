@@ -19,12 +19,15 @@ export const EpisodesPage = () => {
             key={episode.id}
             name={episode.name}
             air_date={'air_date' in episode ? episode.air_date : ''}
-            onClick={() => navigate(`${links.detail}/${episode.id}`, {
-              state: {
-                id: episode.id,
-                type: 'episode'
-              }
-            })} />
+            onClick={() =>
+              navigate(`${links.detail}/${episode.id}`, {
+                state: {
+                  id: episode.id,
+                  type: 'episode',
+                },
+              })
+            }
+          />
         ))}
       </PageWrapper>
     </>

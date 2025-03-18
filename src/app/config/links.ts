@@ -15,8 +15,8 @@ const heroesDetailById = 'heroes/detail/:id';
 const heroesLinks = {
   heroes,
   heroesDetail,
-  heroesDetailById
-}
+  heroesDetailById,
+};
 
 /* Эпизоды */
 const episodes = 'episodes';
@@ -26,8 +26,8 @@ const episodesDetailById = 'episodes/detail/:id';
 const episodesLinks = {
   episodes,
   episodesDetail,
-  episodesDetailById
-}
+  episodesDetailById,
+};
 
 /* Локации */
 const locations = 'locations';
@@ -37,8 +37,8 @@ const locationsDetailById = 'locations/detail/:id';
 const locationsLinks = {
   locations,
   locationsDetail,
-  locationsDetailById
-}
+  locationsDetailById,
+};
 
 const detail = 'detail';
 

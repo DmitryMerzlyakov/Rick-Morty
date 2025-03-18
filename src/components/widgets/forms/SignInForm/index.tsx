@@ -38,8 +38,8 @@ export const SignInForm = () => {
             },
             pattern: {
               value: /^[a-zA-ZА-Яа-яЁё]+$/,
-              message: 'Имя не может содержать цифры и другие спец. символы'
-            }
+              message: 'Имя не может содержать цифры и другие спец. символы',
+            },
           })}
           hint={`${errors.name ? errors.name?.message : ''}`}
         />

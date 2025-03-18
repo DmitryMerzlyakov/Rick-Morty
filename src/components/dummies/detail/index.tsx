@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import { ArrowImage, CircleImage } from '@/assets/icons';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button, Title } from '@/components/ui';
@@ -81,9 +81,9 @@ export const DetailInfo = () => {
         id: id,
         type: `${resource === 'character' ? 'hero' : resource}`,
       },
-      replace: true
-    })
-  }
+      replace: true,
+    });
+  };
 
   return (
     <>
@@ -107,9 +107,7 @@ export const DetailInfo = () => {
                 />
               )}
               {'name' in data && data.name && (
-                <Title fontWeight="700">
-                  {data.name}
-                </Title>
+                <Title fontWeight="700">{data.name}</Title>
               )}
               <div className={styles.detail__info_person_fields}>
                 {'episode' in data && data.episode && (
@@ -139,7 +137,7 @@ export const DetailInfo = () => {
               </div>
             </div>
           </div>
-          {location.state.type === 'hero' &&
+          {location.state.type === 'hero' && (
             <div className={styles.detail__episode}>
               <div className={styles.detail__episode_info}>
                 <Title fontWeight="600">Informations:</Title>
@@ -199,11 +197,10 @@ export const DetailInfo = () => {
                 </div>
               </div>
             </div>
-          }
-          {location.state.type !== 'hero' &&
-            <PageWrapper display='grid'>
-              {
-                Array.isArray(heroByArrIdDetail) &&
+          )}
+          {location.state.type !== 'hero' && (
+            <PageWrapper display="grid">
+              {Array.isArray(heroByArrIdDetail) &&
                 heroByArrIdDetail.map((hero: IHero) => (
                   <InfoCard
                     key={hero.id}
@@ -214,7 +211,7 @@ export const DetailInfo = () => {
                   />
                 ))}
             </PageWrapper>
-          }
+          )}
         </div>
       )}
     </>

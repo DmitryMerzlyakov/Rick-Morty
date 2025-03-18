@@ -2,7 +2,8 @@ import { MainLayout, SignInLayout } from '@/components/layouts';
 import { Route, Routes } from 'react-router-dom';
 import { links } from '@/app/config';
 import { LazyPage } from '@/components/wrapper/lazyLoadWrapper';
-import { DetailPage, EpisodesPage, HeroesPage, LocationsPage, MainPage } from '@/components/pages';
+import { MainPage } from '@/components/pages';
+import { PrivateRouteWrapper } from '@/components/wrapper';
 
 export const AppRoutes = () => {
   return (
@@ -12,33 +13,33 @@ export const AppRoutes = () => {
         <Route
           path={links.heroes}
           element={
-            // <PrivateRouteWrapper>
-            <HeroesPage />
-            // </PrivateRouteWrapper>
+            <PrivateRouteWrapper>
+            <LazyPage page="HeroesPage" />
+            </PrivateRouteWrapper>
           }
         />
         <Route
           path={links.locations}
           element={
-            // <PrivateRouteWrapper>
-            <LocationsPage />
-            // </PrivateRouteWrapper>
+            <PrivateRouteWrapper>
+            <LazyPage page="LocationsPage" />
+            </PrivateRouteWrapper>
           }
         />
         <Route
           path={links.episodes}
           element={
-            // <PrivateRouteWrapper>
-            <EpisodesPage />
-            // </PrivateRouteWrapper>
+            <PrivateRouteWrapper>
+            <LazyPage page="EpisodesPage" />
+            </PrivateRouteWrapper>
           }
         />
         <Route
           path={`:resource/${links.detail}/:id`}
           element={
-            // <PrivateRouteWrapper>
-            <DetailPage />
-            // </PrivateRouteWrapper>
+            <PrivateRouteWrapper>
+            <LazyPage page="DetailPage" />
+            </PrivateRouteWrapper>
           }
         />
       </Route>

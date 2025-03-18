@@ -43,7 +43,9 @@ export const useAxios = () => {
   };
 
   const useAxiosGetLocationById = (id: number | number[]) => {
-    const [locationById, setLocationById] = useState<ILocation | ILocation[] | null>(null);
+    const [locationById, setLocationById] = useState<
+      ILocation | ILocation[] | null
+    >(null);
     const [loadingById, setLoadingById] = useState<boolean>(true);
 
     useEffect(() => {
@@ -79,7 +81,9 @@ export const useAxios = () => {
   };
 
   const useAxiosGetEpisodeById = (id: number | number[]) => {
-    const [episodeById, setEpisodeById] = useState<IEpisode | IEpisode[] | null>(null);
+    const [episodeById, setEpisodeById] = useState<
+      IEpisode | IEpisode[] | null
+    >(null);
     const [loadingById, setLoadingById] = useState<boolean>(true);
 
     useEffect(() => {

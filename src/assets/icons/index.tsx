@@ -87,9 +87,7 @@ const ErrorImage = ({ className, children }: TIconProps) => {
 };
 
 const PortalImage = ({ className }: TIconProps) => {
-  return (
-    <img src={portal} className={classNames(className)} />
-  )
+  return <img src={portal} className={classNames(className)} />;
 };
 
 const TitleImage = ({ className }: TIconProps) => {
@@ -112,9 +110,7 @@ const ArrowImage = ({ className, size = 'm' }: TIconProps) => {
 };
 
 const LocationImage = ({ className }: TIconProps) => {
-  return (
-    <img src={location} className={classNames(className)} />
-  )
+  return <img src={location} className={classNames(className)} />;
 };
 
 export {
@@ -126,5 +122,5 @@ export {
   TitleImage,
   ArrowImage,
   PortalImage,
-  LocationImage
+  LocationImage,
 };

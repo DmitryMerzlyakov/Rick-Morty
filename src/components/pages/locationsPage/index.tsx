@@ -19,12 +19,14 @@ export const LocationsPage = () => {
             key={location.id}
             name={location.name}
             type={'type' in location ? location.type : ''}
-            onClick={() => navigate(`${links.detail}/${location.id}`, {
-              state: {
-                id: location.id,
-                type: 'location'
-              }
-            })}
+            onClick={() =>
+              navigate(`${links.detail}/${location.id}`, {
+                state: {
+                  id: location.id,
+                  type: 'location',
+                },
+              })
+            }
           />
         ))}
       </PageWrapper>

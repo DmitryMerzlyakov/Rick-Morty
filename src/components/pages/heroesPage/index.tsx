@@ -13,19 +13,21 @@ export const HeroesPage = () => {
   return (
     <>
       <TitleImage />
-      <PageWrapper display='grid'>
+      <PageWrapper display="grid">
         {data?.map((hero) => (
           <InfoCard
             key={hero.id}
             name={hero.name}
             image={'image' in hero ? hero.image : ''}
             species={'species' in hero ? hero.species : ''}
-            onClick={() => navigate(`${links.detail}/${hero.id}`, {
-              state: {
-                id: hero.id,
-                type: 'hero'
-              }
-            })}
+            onClick={() =>
+              navigate(`${links.detail}/${hero.id}`, {
+                state: {
+                  id: hero.id,
+                  type: 'hero',
+                },
+              })
+            }
           />
         ))}
       </PageWrapper>
