@@ -4,15 +4,23 @@ import { PageWrapper } from '@/components/wrapper';
 import { links } from '@/app/config';
 import { useAxios } from '@/hooks/useAxios';
 import { TitleImage } from '@/assets/icons';
+import { FilterForm } from '@/components/widgets/forms';
+import styles from './styles.module.scss';
+import { useSearchQueryParams } from '@/hooks/useSearch';
+import { useState } from 'react';
 
 export const HeroesPage = () => {
-  const { useAxiosGet } = useAxios();
   const navigate = useNavigate();
-  const { data } = useAxiosGet('character');
+  const { useAxiosGet } = useAxios();
+  const { getSearchData } = useSearchQueryParams();
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const { data } = useAxiosGet('character', currentPage, getSearchData());
 
   return (
-    <>
+    <div className={styles.heroes}>
       <TitleImage />
+      <FilterForm />
       <PageWrapper display="grid">
         {data?.map((hero) => (
           <InfoCard
@@ -31,6 +39,6 @@ export const HeroesPage = () => {
           />
         ))}
       </PageWrapper>
-    </>
+    </div>
   );
 };

@@ -47,12 +47,17 @@ export interface IInputProps {
    * The input value
    * */
   value?: string;
+  /**
+   * Placeholder's icon
+   * */
+  iconPlaceholder?: React.ReactNode
 }
 
 export const Input = React.forwardRef(
   (
     {
       isError = false,
+      iconPlaceholder,
       type = 'text',
       value,
       labelPosition = 'top',
@@ -91,6 +96,7 @@ export const Input = React.forwardRef(
             value={value}
             ref={ref}
           />
+          <span className={styles.input_icon}>{iconPlaceholder}</span>
           {hint && <span className={styles.input_hint}>{hint}</span>}
         </div>
       </div>

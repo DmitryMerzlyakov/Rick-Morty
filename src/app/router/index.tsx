@@ -1,52 +1,33 @@
 import { MainLayout, SignInLayout } from '@/components/layouts';
 import { Route, Routes } from 'react-router-dom';
 import { links } from '@/app/config';
-// import { LazyPage } from '@/components/wrapper/lazyLoadWrapper';
 // import { PrivateRouteWrapper } from '@/components/wrapper';
 import { MainPage } from '@/components/pages/mainPage';
-import { TPageKeys } from '@/models/interfaces';
-import { lazy, Suspense } from 'react';
+import { HeroesPage } from '@/components/pages/heroesPage';
+import { LocationsPage } from '@/components/pages/locationsPage';
+import { EpisodesPage } from '@/components/pages/episodesPage';
+import { DetailPage } from '@/components/pages/detailPage';
+import { ErrorPage } from '@/components/pages/errorPage';
+import { LoginPage } from '@/components/pages/loginPage';
+// import { lazy } from 'react';
 
-interface IPageProps {
-  page: string;
-  path: TPageKeys;
-}
+// type TPage = "HeroesPage" | "LocationsPage" | "EpisodesPage" | "DetailPage" | "ErrorPage" | "LoginPage";
 
-// const pagePaths = {
-//   detail: '@/components/pages/detailPage',
-//   episode: '@/components/pages/episodePage',
-//   error: '@/components/pages/errorPage',
-//   heroes: '@/components/pages/heroesPage',
-//   locations: '@/components/pages/locationsPage',
-//   login: '@/components/pages/loginPage'
+// interface ILazyPageProps {
+//   page: TPage;
+//   path: string;
+// }
+
+// const LazyComponent = (page: TPage, path: string) => {
+//   return lazy(() =>
+//     import(`../../components/pages/${path}`).then((module) => ({ default: module[page] }))
+//   );
 // };
 
-
-const LazyComponent = (page: string, path: string) => {
-  return lazy(() =>
-    import(`@/components/pages/${path}`).then((module) => ({ default: module[page] }))
-  );
-};
-
-// const LazyComponent = (page: TPageKeys) => {
-//   return lazy(() => import(`../../components/pages/${page}`));
-// };
-
-const LazyPage = ({ page, path }: IPageProps) => {
-  const Component = LazyComponent(page, path);
-  return (
-    <Suspense fallback={<div>123213213</div>}>
-      <Component />
-    </Suspense>
-  );
-};
-
-// const LazyPage = () => {
-//   const Component = DetailPage();
+// const LazyPage = ({ page, path }: ILazyPageProps) => {
+//   const Component = LazyComponent(page, path);
 //   return (
-//     <Suspense fallback={<div>123213213</div>}>
-//       <Component />
-//     </Suspense>
+//     <Component />
 //   );
 // };
 
@@ -59,7 +40,8 @@ export const AppRoutes = () => {
           path={links.heroes}
           element={
             // <PrivateRouteWrapper>
-            <LazyPage path="heroesPage" page="HeroesPage"/>
+            // <LazyPage page="HeroesPage" path="heroesPage" />
+            <HeroesPage />
             // </PrivateRouteWrapper>
           }
         />
@@ -67,8 +49,8 @@ export const AppRoutes = () => {
           path={links.locations}
           element={
             // <PrivateRouteWrapper>
-            <LazyPage path="locationsPage" page="LocationsPage"/>
-
+            // <LazyPage page="LocationsPage" path="locationsPage" />
+            <LocationsPage />
             // </PrivateRouteWrapper>
           }
         />
@@ -76,8 +58,8 @@ export const AppRoutes = () => {
           path={links.episodes}
           element={
             // <PrivateRouteWrapper>
-            <LazyPage path="episodesPage" page="EpisodesPage"/>
-
+            // <LazyPage page="EpisodesPage" path="episodesPage" />
+            <EpisodesPage />
             // </PrivateRouteWrapper>
           }
         />
@@ -85,15 +67,21 @@ export const AppRoutes = () => {
           path={`:resource/${links.detail}/:id`}
           element={
             // <PrivateRouteWrapper>
-            <LazyPage path="detailPage" page="DetailPage"/>
-
+            // <LazyPage page="DetailPage" path="detailPage" />
+            <DetailPage />
             // </PrivateRouteWrapper>
           }
         />
       </Route>
-      <Route path={links.error} element={<LazyPage path="errorPage" page="ErrorPage"/>} />
+      <Route path={links.error} element={
+        // <LazyPage page="ErrorPage" path="errorPage" />
+        <ErrorPage />
+      } />
       <Route path={links.login} element={<SignInLayout />}>
-        <Route index element={<LazyPage path="loginPage" page="LoginPage"/>} />
+        <Route index element={
+          // <LazyPage page="LoginPage" path="loginPage" />
+          <LoginPage />
+        } />
       </Route>
     </Routes>
   );

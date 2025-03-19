@@ -18,7 +18,7 @@ interface ResourceMap {
 export const useAxios = () => {
   const useAxiosGet = (
     resource: TApiResources,
-    currentPage?: number,
+    currentPage: number,
     query?: IGeneralQuery
   ) => {
     const [data, setData] = useState<ResourceMap[typeof resource] | null>(null);
@@ -31,13 +31,13 @@ export const useAxios = () => {
         url: `${BASE_URL}/${resource}`,
         params: {
           page: currentPage,
-          q: query,
+          name: query?.name,
         },
       }).then((response) => {
         setData(response.data.results);
         setLoading((prev) => !prev);
       });
-    }, [resource, currentPage, query]);
+    }, [resource, JSON.stringify(query)]);
 
     return { data, loading };
   };

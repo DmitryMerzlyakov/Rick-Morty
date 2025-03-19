@@ -7,16 +7,16 @@ import classNames from 'classnames';
 import { CircleImage } from '@/assets/icons';
 import { useRouteDetail } from '@/hooks/useRouteDetail';
 
-interface HeroSubInfoProps {
+interface IEpisodesByIdProps {
   episodeId: number[];
   data: IHero;
 }
 
-export const HeroSubInfo = ({ episodeId, data }: HeroSubInfoProps) => {
+export const EpisodesById = ({ episodeId, data }: IEpisodesByIdProps) => {
   const { currentData } = useCurrentData();
   const { handleClickDetail } = useRouteDetail();
-  
-  const dataById = currentData('episode', episodeId);
+
+  const dataById = currentData("episode", episodeId);
 
   return (
     <div className={styles.detail__episode}>
