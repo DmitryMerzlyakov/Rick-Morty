@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 import { MortyImage, RickImage } from '@/assets/icons';
-import { Suspense } from 'react';
 
 export const MainLayout = () => {
   return (
@@ -14,9 +13,7 @@ export const MainLayout = () => {
         <MortyImage className={styles.mainLayout__image_content} />
       </div>
       <div className={styles.mainLayout__body}>
-      <Suspense>
         <Outlet />
-      </Suspense>
       </div>
     </div>
   );

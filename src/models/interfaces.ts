@@ -48,15 +48,17 @@ export interface IAuthProviderValue {
 }
 
 export type TPageKeys =
-  | 'DetailPage'
-  | 'EpisodesPage'
-  | 'ErrorPage'
-  | 'HeroesPage'
-  | 'LocationsPage'
-  | 'LoginPage'
-  | 'MainPage';
+  | 'detailPage'
+  | 'episodesPage'
+  | 'errorPage'
+  | 'heroesPage'
+  | 'locationsPage'
+  | 'loginPage'
+  | 'mainPage';
 
 export type TApiResources = 'character' | 'location' | 'episode';
+
+export type ResourceType = 'hero' | 'location' | 'episode';
 
 export type THeroStatus = 'alive' | 'dead' | 'unknown';
 

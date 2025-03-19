@@ -7,6 +7,6 @@ export const AuthContext = createContext<IAuthProviderValue | null>(null);
 
 export const LazyComponent = (page: TPageKeys) => {
   return lazy(() =>
-    import('@/components/pages').then((module) => ({ default: module[page] }))
+    import(`@/components/pages/${page}`).then((module) => ({ default: module[page] }))
   );
 };

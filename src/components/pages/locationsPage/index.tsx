@@ -5,7 +5,7 @@ import { links } from '@/app/config';
 import { useAxios } from '@/hooks/useAxios';
 import { PortalImage } from '@/assets/icons';
 
-export const LocationsPage = () => {
+ export const LocationsPage = () => {
   const navigate = useNavigate();
   const { useAxiosGet } = useAxios();
   const { data } = useAxiosGet('location');
