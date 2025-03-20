@@ -1,0 +1,14 @@
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: 14px 40px 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-lg);
+  background-color: var(--color-background);
+}
+
+.select__container_icon_rotate {
+  rotate: 180;
+}

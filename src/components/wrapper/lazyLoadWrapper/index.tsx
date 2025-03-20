@@ -1,13 +1,16 @@
-import { LazyComponent } from '@/models/constants';
-import { TPageKeys } from '@/models/interfaces';
+// import { Suspense } from 'react';
+// import { LazyComponent } from '/src/models/constants';
 
-interface IPageProps {
-  page: TPageKeys;
-}
+// interface ILazyPageProps {
+//   page: string
+//   route: string
+// }
 
-export const LazyPage = ({ page }: IPageProps) => {
-  const Component = LazyComponent(page);
-  return (
-    <Component />
-  );
-};
+// export const LazyPage = ({page, route}: ILazyPageProps) => {
+//   const Component = LazyComponent(route, page);
+//   return (
+//     <Suspense fallback={<p>Loading...</p>}>
+//       <Component />
+//     </Suspense>
+//   )
+// }

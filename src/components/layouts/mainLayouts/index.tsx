@@ -1,9 +1,8 @@
-import { Header } from '@/components/ui';
+import { Header } from '/src/components/ui';
 import { Outlet } from 'react-router-dom';
 
 import styles from './styles.module.scss';
-import { MortyImage, RickImage } from '@/assets/icons';
-import { Suspense } from 'react';
+import { MortyImage, RickImage } from '/src/assets/icons';
 
 export const MainLayout = () => {
   return (
@@ -14,9 +13,7 @@ export const MainLayout = () => {
         <MortyImage className={styles.mainLayout__image_content} />
       </div>
       <div className={styles.mainLayout__body}>
-        <Suspense fallback={<div>123213213</div>}>
-          <Outlet />
-        </Suspense>
+        <Outlet />
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
-import { links } from '@/app/config';
-import { ErrorImage } from '@/assets/icons';
-import { Button } from '@/components/ui';
-import { ErrorWrapper } from '@/components/wrapper';
+import { links } from '/src/app/config';
+import { ErrorImage } from '/src/assets/icons';
+import { Button } from '/src/components/ui';
+import { ErrorWrapper } from '/src/components/wrapper';
 import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss';
 
-export const ErrorPage = () => {
+const ErrorPage = () => {
   const navigate = useNavigate();
 
   return (
@@ -17,3 +17,5 @@ export const ErrorPage = () => {
     </ErrorWrapper>
   );
 };
+
+export default ErrorPage;

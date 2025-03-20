@@ -1,4 +1,4 @@
-import { links } from '@/app/config';
+import { links } from '/src/app/config';
 import { useNavigate } from 'react-router-dom';
 
 export const useRouteDetail = () => {

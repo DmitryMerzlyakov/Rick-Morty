@@ -1,6 +1,6 @@
-import { Button, Title } from '@/components/ui';
+import { Button, Title } from '/src/components/ui';
 import styles from './styles.module.scss';
-import { SubTitle } from '@/components/ui/subtitle';
+import { SubTitle } from '/src/components/ui/subtitle';
 
 interface IInfoCardProps {
   name: string;

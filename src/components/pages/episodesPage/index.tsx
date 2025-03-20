@@ -1,14 +1,19 @@
-import { InfoCard } from '@/components/dummies';
+import { InfoCard } from '/src/components/dummies';
 import { useNavigate } from 'react-router-dom';
-import { PageWrapper } from '@/components/wrapper';
-import { links } from '@/app/config';
-import { useAxios } from '@/hooks/useAxios';
-import { LocationImage } from '@/assets/icons';
+import { PageWrapper } from '/src/components/wrapper';
+import { links } from '/src/app/config';
+import { useAxios } from '/src/hooks/useAxios';
+import { LocationImage } from '/src/assets/icons';
+import { useState } from 'react';
+import { useSearchQueryParams } from '/src/hooks/useSearch';
 
-export const EpisodesPage = () => {
+const EpisodesPage = () => {
   const navigate = useNavigate();
   const { useAxiosGet } = useAxios();
-  const { data } = useAxiosGet('episode');
+  const { getSearchData } = useSearchQueryParams();
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const { data } = useAxiosGet('episode', currentPage, getSearchData());
+
 
   return (
     <>
@@ -33,3 +38,5 @@ export const EpisodesPage = () => {
     </>
   );
 };
+
+export default EpisodesPage;

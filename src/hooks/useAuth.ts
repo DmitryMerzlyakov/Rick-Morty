@@ -1,4 +1,4 @@
-import { IAuthProviderValue } from '@/models/interfaces';
+import { IAuthProviderValue } from '/src/models/interfaces';
 import { Context, useContext } from 'react';
 
 interface IUseAuth {

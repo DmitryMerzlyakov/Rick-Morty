@@ -17,11 +17,9 @@
     /* Linting */
     "strict": true,
 
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@app/*": ["src/app/*"],
-      "@ui/*": ["src/components/ui/*"]
+      "/src/*": ["src/*"]
     }
   },
   "include": ["src", "src/custom.d.ts"],

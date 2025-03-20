@@ -1,15 +1,15 @@
-import { InfoCard } from '@/components/dummies';
+import { InfoCard } from '/src/components/dummies';
 import { useNavigate } from 'react-router-dom';
-import { PageWrapper } from '@/components/wrapper';
-import { links } from '@/app/config';
-import { useAxios } from '@/hooks/useAxios';
-import { TitleImage } from '@/assets/icons';
-import { FilterForm } from '@/components/widgets/forms';
+import { PageWrapper } from '/src/components/wrapper';
+import { links } from '/src/app/config';
+import { useAxios } from '/src/hooks/useAxios';
+import { TitleImage } from '/src/assets/icons';
+import { FilterForm } from '/src/components/widgets/forms';
 import styles from './styles.module.scss';
-import { useSearchQueryParams } from '@/hooks/useSearch';
+import { useSearchQueryParams } from '/src/hooks/useSearch';
 import { useState } from 'react';
 
-export const HeroesPage = () => {
+const HeroesPage = () => {
   const navigate = useNavigate();
   const { useAxiosGet } = useAxios();
   const { getSearchData } = useSearchQueryParams();
@@ -42,3 +42,5 @@ export const HeroesPage = () => {
     </div>
   );
 };
+
+export default HeroesPage;

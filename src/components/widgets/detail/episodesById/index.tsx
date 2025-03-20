@@ -1,11 +1,11 @@
-import { Button, Title } from '@/components/ui';
+import { Button, Title } from '/src/components/ui';
 import styles from '../styles.module.scss';
-import { SubTitle } from '@/components/ui/subtitle';
-import { useCurrentData } from '@/hooks/useCurrentData';
-import { IHero } from '@/models/interfaces';
+import { SubTitle } from '/src/components/ui/subtitle';
+import { useCurrentData } from '/src/hooks/useCurrentData';
+import { IHero } from '/src/models/interfaces';
 import classNames from 'classnames';
-import { CircleImage } from '@/assets/icons';
-import { useRouteDetail } from '@/hooks/useRouteDetail';
+import { CircleImage } from '/src/assets/icons';
+import { useRouteDetail } from '/src/hooks/useRouteDetail';
 
 interface IEpisodesByIdProps {
   episodeId: number[];

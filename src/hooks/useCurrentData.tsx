@@ -1,4 +1,4 @@
-import { IEpisode, IHero, ILocation, ResourceType } from '@/models/interfaces';
+import { IEpisode, IHero, ILocation, ResourceType } from '/src/models/interfaces';
 import { useAxios } from './useAxios';
 
 export const useCurrentData = () => {

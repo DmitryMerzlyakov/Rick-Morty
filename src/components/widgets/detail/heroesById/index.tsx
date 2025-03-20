@@ -1,9 +1,9 @@
-import { useCurrentData } from '@/hooks/useCurrentData';
-import { IHero } from '@/models/interfaces';
-import { useRouteDetail } from '@/hooks/useRouteDetail';
-import { InfoCard } from '@/components/dummies';
-import { PageWrapper } from '@/components/wrapper';
-import { SubTitle } from '@/components/ui/subtitle';
+import { useCurrentData } from '/src/hooks/useCurrentData';
+import { IHero } from '/src/models/interfaces';
+import { useRouteDetail } from '/src/hooks/useRouteDetail';
+import { InfoCard } from '/src/components/dummies';
+import { PageWrapper } from '/src/components/wrapper';
+import { SubTitle } from '/src/components/ui/subtitle';
 
 interface IHeroesByIdProps {
   heroesId: number[];

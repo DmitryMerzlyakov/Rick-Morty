@@ -1,11 +1,11 @@
-import { Button, Input } from '@/components/ui';
+import { Button, Input } from '/src/components/ui';
 import styles from './styles.module.scss';
-import { IUser } from '@/models/interfaces';
+import { IUser } from '/src/models/interfaces';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { useAuth } from '@/hooks/useAuth';
-import { AuthContext } from '@/models/constants';
+import { useAuth } from '/src/hooks/useAuth';
+import { AuthContext } from '/src/models/constants';
 import { useNavigate } from 'react-router-dom';
-import { links } from '@/app/config';
+import { links } from '/src/app/config';
 
 export const SignInForm = () => {
   const navigate = useNavigate();

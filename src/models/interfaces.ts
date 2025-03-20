@@ -73,3 +73,8 @@ export interface IGeneralQuery {
   dimension?: string;
   episode?: number | number[];
 }
+
+export interface IOption {
+  value: string;
+  label: string;
+}

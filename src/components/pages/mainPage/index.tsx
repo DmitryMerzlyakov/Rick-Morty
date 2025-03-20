@@ -1,7 +1,7 @@
-import { TitleImage } from '@/assets/icons';
+import { TitleImage } from '/src/assets/icons';
 import styles from './styles.module.scss';
 
-export const MainPage = () => {
+const MainPage = () => {
   return (
     <div className={styles.main}>
       <TitleImage className={styles.main__img} />
@@ -9,3 +9,5 @@ export const MainPage = () => {
     </div>
   );
 };
+
+export default MainPage;

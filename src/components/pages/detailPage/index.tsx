@@ -1,10 +1,12 @@
-import { DetailInfo } from '@/components/widgets/detail';
-import { PageWrapper } from '@/components/wrapper';
+import { DetailInfo } from '/src/components/widgets/detail';
+import { PageWrapper } from '/src/components/wrapper';
 
-export const DetailPage = () => {
+const DetailPage = () => {
   return (
     <PageWrapper>
       <DetailInfo />
     </PageWrapper>
   );
 };
+
+export default DetailPage;

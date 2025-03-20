@@ -1,10 +1,12 @@
-import { SignInForm } from '@/components/widgets/forms';
-import { PageWrapper } from '@/components/wrapper';
+import { SignInForm } from '/src/components/widgets/forms';
+import { PageWrapper } from '/src/components/wrapper';
 
-export const LoginPage = () => {
+const LoginPage = () => {
   return (
     <PageWrapper>
       <SignInForm />
     </PageWrapper>
   );
 };
+
+export default LoginPage;

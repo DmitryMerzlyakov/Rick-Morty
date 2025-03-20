@@ -1,11 +1,11 @@
 import styles from './styles.module.scss';
-import { ArrowImage } from '@/assets/icons';
+import { ArrowImage } from '/src/assets/icons';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Button, Title } from '@/components/ui';
-import { SubTitle } from '@/components/ui/subtitle';
+import { Button, Title } from '/src/components/ui';
+import { SubTitle } from '/src/components/ui/subtitle';
 import { useEffect, useState } from 'react';
-import { IHero } from '@/models/interfaces';
-import { useCurrentData } from '@/hooks/useCurrentData';
+import { IHero } from '/src/models/interfaces';
+import { useCurrentData } from '/src/hooks/useCurrentData';
 import { EpisodesById } from './episodesById';
 import { HeroesById } from './heroesById';
 
