@@ -20,7 +20,7 @@ const HeroesPage = () => {
   return (
     <div className={styles.heroes}>
       <TitleImage />
-      <FilterForm />
+      <FilterForm species name gender status />
       <PageWrapper display="grid">
         {data?.map((hero) => (
           <InfoCard

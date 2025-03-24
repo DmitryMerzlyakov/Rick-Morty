@@ -6,6 +6,8 @@ import { useAxios } from '/src/hooks/useAxios';
 import { LocationImage } from '/src/assets/icons';
 import { useState } from 'react';
 import { useSearchQueryParams } from '/src/hooks/useSearch';
+import { FilterForm } from '../../widgets/forms';
+import styles from './styles.module.scss';
 
 const EpisodesPage = () => {
   const navigate = useNavigate();
@@ -16,8 +18,9 @@ const EpisodesPage = () => {
 
 
   return (
-    <>
+    <div className={styles.episodes}>
       <LocationImage />
+      <FilterForm name />
       <PageWrapper display="grid">
         {data?.map((episode) => (
           <InfoCard
@@ -35,7 +38,7 @@ const EpisodesPage = () => {
           />
         ))}
       </PageWrapper>
-    </>
+    </div>
   );
 };
 

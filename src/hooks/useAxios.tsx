@@ -32,11 +32,17 @@ export const useAxios = () => {
         params: {
           page: currentPage,
           name: query?.name,
+          gender: query?.gender,
+          status: query?.status,
+          species: query?.species,
+          type: query?.type,
+          dimension: query?.dimension
         },
       }).then((response) => {
         setData(response.data.results);
         setLoading((prev) => !prev);
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [resource, JSON.stringify(query)]);
 
     return { data, loading };

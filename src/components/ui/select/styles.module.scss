@@ -1,14 +1,56 @@
 .select {
+  width: 100%;
+  height: 51px;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  padding: 14px 40px 12px 14px;
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-lg);
   background-color: var(--color-background);
-}
 
-.select__container_icon_rotate {
-  rotate: 180;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    right: 10px;
+  }
+
+  &__text {
+    width: 100%;
+    margin: 9px 12px;
+    -webkit-text-security: none;
+    color: rgb(117, 117, 117);
+    direction: inherit !important;
+    pointer-events: none !important;
+    text-orientation: inherit !important;
+    writing-mode: inherit !important;
+  }
+
+  &__dropdown {
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--color-background);
+
+    &_item {
+      width: fit-content;
+      font-size: var(--font-size-lg);
+
+      :hover {
+        color: var(--color-hover);
+      }
+    }
+  }
 }

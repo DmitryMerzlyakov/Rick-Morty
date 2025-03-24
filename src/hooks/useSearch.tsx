@@ -21,17 +21,5 @@ export const useSearchQueryParams = () => {
     return Object.fromEntries(searchParams.entries());
   };
 
-  const resetSearch = (FieldsNames: { [key: string]: string }) => {
-    setSearch((prevParams) => {
-      const data = Object.fromEntries(prevParams.entries());
-
-      Object.entries(FieldsNames).forEach(([_, value]) => {
-        delete data[value];
-      });
-
-      return new URLSearchParams(data);
-    });
-  };
-
-  return { createSearch, getSearchData, resetSearch };
+  return { createSearch, getSearchData };
 };

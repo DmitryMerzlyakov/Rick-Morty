@@ -5,7 +5,10 @@ import title from './image/title.png';
 import portal from './image/portal.png';
 import location from './image/location.png';
 
-type TIconProps = SVGAttributes<SVGElement> & { size?: 's' | 'm' | 'l' | 'xl' };
+type TIconProps = SVGAttributes<SVGElement> & {
+  size?: 's' | 'm' | 'l' | 'xl';
+  direction?: 'down' | 'up';
+};
 
 const RickImage = ({ className }: TIconProps) => {
   return (
@@ -87,7 +90,7 @@ const ErrorImage = ({ className, children }: TIconProps) => {
 };
 
 const PortalImage = ({ className }: TIconProps) => {
-  return <img src={portal} className={classNames(className)} />;
+  return <img src={portal} className={classNames(styles.img, className)} />;
 };
 
 const TitleImage = ({ className }: TIconProps) => {
@@ -125,26 +128,49 @@ const SearchImage = () => {
   );
 };
 
-const SelectArrowImage = ({ className, size = 'm' }: TIconProps) => {
+const SelectArrowImage = ({ className, size = 'm', direction = 'down', }: TIconProps) => {
+  let rotation;
+
+  switch (direction) {
+    case 'up':
+      rotation = 'rotate(90)';
+      break;
+    case 'down':
+      rotation = 'rotate(270)';
+      break;
+  }
+
   return (
     <svg
       className={classNames(styles.icon, styles[size], className)}
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
       fill="none"
+      transform={rotation}
+      viewBox="0 0 24 24"
     >
-      <g>
-        <path d="M7 10L12 15L17 10H7Z" fill="black" fill-opacity="0.54" />
-      </g>
-      <defs>
-        <clipPath id="clip0_459_53">
-          <rect width="24" height="24" fill="white" />
-        </clipPath>
-      </defs>
+      <path
+        d="M15.8535 20.8536C16.0488 20.6583 16.0488 20.3417 15.8535 20.1464L7.70706 12L15.8535 3.85355C16.0488 3.65829 16.0488 3.34171 15.8535 3.14645C15.6582 2.95118 15.3417 2.95118 15.1464 3.14645L6.29285 12L15.1464 20.8536C15.3417 21.0488 15.6582 21.0488 15.8535 20.8536Z"
+        fill="black"
+        fill-opacity="0.54"
+      />
     </svg>
   );
 };
+
+const DeleteImage = ({ className, size = 'm' }: TIconProps) => {
+  return (
+    <svg
+      className={classNames(styles.icon, styles[size], className)}
+      fill="none"
+      viewBox="0 0 24 24">
+      <path
+        d="M18.1464 5.14645C18.3417 4.95118 18.6583 4.95118 18.8536 5.14645C19.0488 5.34171 19.0488 5.65829 18.8536 5.85355L12.7071 12L18.8536 18.1464C19.0488 18.3417 19.0488 18.6583 18.8536 18.8536C18.6583 19.0488 18.3417 19.0488 18.1464 18.8536L12 12.7071L5.85355 18.8536C5.65829 19.0488 5.34171 19.0488 5.14645 18.8536C4.95118 18.6583 4.95118 18.3417 5.14645 18.1464L11.2929 12L5.14645 5.85355C4.95118 5.65829 4.95118 5.34171 5.14645 5.14645C5.34171 4.95118 5.65829 4.95118 5.85355 5.14645L12 11.2929L18.1464 5.14645Z"
+        fill="black"
+        fill-opacity="0.54"
+      />
+    </svg>
+  );
+};
+
 
 export {
   MortyImage,
@@ -158,4 +184,5 @@ export {
   LocationImage,
   SearchImage,
   SelectArrowImage,
+  DeleteImage
 };
