@@ -2,66 +2,24 @@ import { Route, Routes } from 'react-router-dom';
 import { MainLayout, SignInLayout } from '/src/components/layouts';
 import { links } from '../config';
 import MainPage from '/src/components/pages/mainPage';
-import { lazy, Suspense } from 'react';
-
-interface ILazyPageProps {
-  page: string;
-}
-
-interface ILazyComponent {
-  [key: string]: () => React.LazyExoticComponent<() => React.ReactNode>;
-}
-
-const detailPage = () => lazy(() => import(`/src/components/pages/detailPage`));
-const episodesPage = () => lazy(() => import(`/src/components/pages/episodesPage`));
-const locationsPage = () => lazy(() => import(`/src/components/pages/locationsPage`));
-const errorPage = () => lazy(() => import(`/src/components/pages/errorPage`));
-const heroesPage = () => lazy(() => import(`/src/components/pages/heroesPage`));
-const loginPage = () => lazy(() => import(`/src/components/pages/loginPage`));
-
-const LazyComponent: ILazyComponent = {
-  detail: detailPage,
-  episodes: episodesPage,
-  locations: locationsPage,
-  error: errorPage,
-  heroes: heroesPage,
-  login: loginPage,
-};
-
-export const LazyPage = ({ page }: ILazyPageProps) => {
-  const Component = LazyComponent[page]?.();
-  if (!Component) {
-    return <div>Page not found</div>;
-  }
-
-  return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <Component />
-    </Suspense>
-  );
-};
+import { LazyPage } from '/src/components/wrapper/lazyLoadWrapper';
 
 export const AppRoutes = () => {
   return (
     <Routes>
-      {/* Главная страница */}
       <Route path={links.main} element={<MainLayout />}>
         <Route index element={<MainPage />} />
-        <Route path={links.heroes} element={<LazyPage page="heroes" />} />
-        <Route path={links.locations} element={<LazyPage page="locations" />} />
-        <Route path={links.episodes} element={<LazyPage page="episodes" />} />
+        <Route path={links.heroes} element={<LazyPage route="heroesPage" />} />
+        <Route path={links.locations} element={<LazyPage route="locationsPage" />} />
+        <Route path={links.episodes} element={<LazyPage route="episodesPage" />} />
         <Route
           path={`:resource/${links.detail}/:id`}
-          element={<LazyPage page="detail" />}
+          element={<LazyPage route="detailPage" />}
         />
       </Route>
-
-      {/* Страница ошибки */}
-      <Route path={links.error} element={<LazyPage page="error" />} />
-
-      {/* Авторизация */}
+      <Route path={links.error} element={<LazyPage route="errorPage" />} />
       <Route path={links.login} element={<SignInLayout />}>
-        <Route index element={<LazyPage page="login" />} />
+        <Route index element={<LazyPage route="loginPage" />} />
       </Route>
     </Routes>
   );

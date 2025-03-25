@@ -8,14 +8,15 @@ import { useState } from 'react';
 import { useSearchQueryParams } from '/src/hooks/useSearch';
 import { FilterForm } from '../../widgets/forms';
 import styles from './styles.module.scss';
+import { Button } from '../../ui';
 
 const EpisodesPage = () => {
   const navigate = useNavigate();
   const { useAxiosGet } = useAxios();
   const { getSearchData } = useSearchQueryParams();
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const { data } = useAxiosGet('episode', currentPage, getSearchData());
 
+  const { data } = useAxiosGet('episode', currentPage, getSearchData());
 
   return (
     <div className={styles.episodes}>
@@ -38,6 +39,13 @@ const EpisodesPage = () => {
           />
         ))}
       </PageWrapper>
+      <Button
+        size='xl'
+        className={styles.episodes__button}
+        onClick={() => setCurrentPage((prev: number) => prev + 1)}
+      >
+        More
+      </Button>
     </div>
   );
 };

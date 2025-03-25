@@ -21,11 +21,11 @@ export const useAxios = () => {
     currentPage: number,
     query?: IGeneralQuery
   ) => {
+    const [loading, setLoading] = useState<boolean>(false);
     const [data, setData] = useState<ResourceMap[typeof resource] | null>(null);
-    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-      setLoading((prev) => !prev);
+      setLoading(true);
       axios({
         method: 'GET',
         url: `${BASE_URL}/${resource}`,
@@ -39,11 +39,13 @@ export const useAxios = () => {
           dimension: query?.dimension
         },
       }).then((response) => {
-        setData(response.data.results);
-        setLoading((prev) => !prev);
-      });
+        setData((prevData) => {
+          const existingData = prevData || []
+          return [...existingData, ...response.data.results]
+        });
+      }).finally(() => setLoading(false))
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [resource, JSON.stringify(query)]);
+    }, [resource, JSON.stringify(query), currentPage]);
 
     return { data, loading };
   };

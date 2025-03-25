@@ -8,12 +8,14 @@ import { useState } from 'react';
 import { useSearchQueryParams } from '/src/hooks/useSearch';
 import { FilterForm } from '../../widgets/forms';
 import styles from './styles.module.scss';
+import { Button } from '../../ui';
 
 const LocationsPage = () => {
   const navigate = useNavigate();
   const { useAxiosGet } = useAxios();
   const { getSearchData } = useSearchQueryParams();
   const [currentPage, setCurrentPage] = useState<number>(1);
+
   const { data } = useAxiosGet('location', currentPage, getSearchData());
 
   return (
@@ -37,6 +39,13 @@ const LocationsPage = () => {
           />
         ))}
       </PageWrapper>
+      <Button
+        size='xl'
+        className={styles.locations__button}
+        onClick={() => setCurrentPage((prev: number) => prev + 1)}
+      >
+        More
+      </Button>
     </div>
   );
 };

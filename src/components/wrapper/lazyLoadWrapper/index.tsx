@@ -1,16 +1,15 @@
-// import { Suspense } from 'react';
-// import { LazyComponent } from '/src/models/constants';
+import { Suspense } from 'react';
+import { LazyComponent } from '/src/models/constants';
 
-// interface ILazyPageProps {
-//   page: string
-//   route: string
-// }
+interface ILazyPageProps {
+  route: string
+}
 
-// export const LazyPage = ({page, route}: ILazyPageProps) => {
-//   const Component = LazyComponent(route, page);
-//   return (
-//     <Suspense fallback={<p>Loading...</p>}>
-//       <Component />
-//     </Suspense>
-//   )
-// }
+export const LazyPage = ({ route }: ILazyPageProps) => {
+  const Component = LazyComponent(route);
+  return (
+    <Suspense fallback={<p>Loading...</p>}>
+      <Component />
+    </Suspense>
+  )
+}

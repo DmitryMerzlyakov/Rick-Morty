@@ -17,7 +17,7 @@ export const InfoCard = ({
   onClick,
   species,
   air_date,
-  type,
+  type
 }: IInfoCardProps) => {
   return (
     <div className={styles.hero} onClick={onClick}>

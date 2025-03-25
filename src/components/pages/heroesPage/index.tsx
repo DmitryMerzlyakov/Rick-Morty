@@ -8,6 +8,7 @@ import { FilterForm } from '/src/components/widgets/forms';
 import styles from './styles.module.scss';
 import { useSearchQueryParams } from '/src/hooks/useSearch';
 import { useState } from 'react';
+import { Button } from '../../ui';
 
 const HeroesPage = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const HeroesPage = () => {
       <TitleImage />
       <FilterForm species name gender status />
       <PageWrapper display="grid">
-        {data?.map((hero) => (
+        {data?.map((hero) =>
           <InfoCard
             key={hero.id}
             name={hero.name}
@@ -37,8 +38,15 @@ const HeroesPage = () => {
               })
             }
           />
-        ))}
+        )}
       </PageWrapper>
+      <Button
+        size='xl'
+        className={styles.heroes__button}
+        onClick={() => setCurrentPage((prev: number) => prev + 1)}
+      >
+        More
+      </Button>
     </div>
   );
 };
