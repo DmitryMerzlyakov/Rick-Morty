@@ -22,10 +22,10 @@ export const Header = ({ className }: IHeaderProps) => {
   return (
     <header className={classNames(styles.header, className)}>
       <div className={styles.header__content}>
-        <HeroImage size="xl" className={styles.header__content_logo} />
+        <HeroImage size='xl' className={styles.header__content_logo} />
         {auth.user?.name && (
           <Button
-            variant="text"
+            variant='text'
             onClick={() => auth.signOut(() => navigate(links.main))}
           >
             {auth.user?.nickName}
@@ -34,33 +34,33 @@ export const Header = ({ className }: IHeaderProps) => {
       </div>
       <div>
         <Button
-          size="md"
-          variant="text"
-          color="purple"
+          size='md'
+          variant='text'
+          color='purple'
           onClick={() => navigate(links.main)}
         >
           Home
         </Button>
         <Button
-          size="md"
-          variant="text"
-          color="purple"
+          size='md'
+          variant='text'
+          color='purple'
           onClick={() => navigate(links.heroes)}
         >
           Heroes
         </Button>
         <Button
-          size="md"
-          variant="text"
-          color="purple"
+          size='md'
+          variant='text'
+          color='purple'
           onClick={() => navigate(links.locations)}
         >
           Locations
         </Button>
         <Button
-          size="md"
-          variant="text"
-          color="purple"
+          size='md'
+          variant='text'
+          color='purple'
           onClick={() => navigate(links.episodes)}
         >
           Episodes

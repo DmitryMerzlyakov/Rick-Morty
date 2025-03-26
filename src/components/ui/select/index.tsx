@@ -7,28 +7,28 @@ import { Button } from '../button';
 
 interface ISelectProps {
   /**
-  * The select's options values
-  * */
+   * The select's options values
+   * */
   options: IOption[];
   /**
-  * Additional class names
-  */
+   * Additional class names
+   */
   className?: string;
   /**
-  * The select's handler
-  * */
+   * The select's handler
+   * */
   onChange?: (value: string) => void;
   /**
-  * The select's additional clear value function
-  * */
+   * The select's additional clear value function
+   * */
   onClear?: () => void;
   /**
    * The select's placeholder
    * */
   selectPlaceholder?: string;
   /**
-  * The select's value
-  * */
+   * The select's value
+   * */
   value?: string;
 }
 
@@ -37,7 +37,7 @@ export const Select = ({
   className,
   onChange,
   selectPlaceholder,
-  value = ''
+  value = '',
 }: ISelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [internalValue, setInternalValue] = useState<IOption | null>(null);
@@ -49,7 +49,9 @@ export const Select = ({
 
   useEffect(() => {
     if (value !== '') {
-      setInternalValue(options.find((option) => option.value === value) || null);
+      setInternalValue(
+        options.find((option) => option.value === value) || null
+      );
     }
   }, [options, value]);
 
@@ -71,7 +73,7 @@ export const Select = ({
     if (onChange) {
       onChange('');
     }
-  }
+  };
 
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
@@ -80,19 +82,19 @@ export const Select = ({
   return (
     <div className={classNames(styles.select, className)}>
       <div className={styles.select__container} onClick={toggleDropdown}>
-        <span
-          className={styles.select__text}
-        >
+        <span className={styles.select__text}>
           {selectedOption?.label ? selectedOption?.label : selectPlaceholder}
         </span>
-        {
-          selectedOption?.label ?
-            <Button variant="text" onClick={(e) => handleDeleteOption(e)}>
-              <DeleteImage className={styles.select__icon} />
-            </Button>
-            :
-            <SelectArrowImage className={styles.select__icon} direction={`${isOpen ? 'up' : 'down'}`} />
-        }
+        {selectedOption?.label ? (
+          <Button variant='text' onClick={(e) => handleDeleteOption(e)}>
+            <DeleteImage className={styles.select__icon} />
+          </Button>
+        ) : (
+          <SelectArrowImage
+            className={styles.select__icon}
+            direction={`${isOpen ? 'up' : 'down'}`}
+          />
+        )}
       </div>
       {isOpen && (
         <ul className={styles.select__dropdown}>

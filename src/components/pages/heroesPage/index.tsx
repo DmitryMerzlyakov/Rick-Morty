@@ -22,7 +22,7 @@ const HeroesPage = () => {
     <div className={styles.heroes}>
       <TitleImage />
       <FilterForm species name gender status />
-      <PageWrapper display="grid">
+      <PageWrapper display='grid'>
         {data?.map((hero) =>
           <InfoCard
             key={hero.id}

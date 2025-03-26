@@ -17,12 +17,12 @@ export const InfoCard = ({
   onClick,
   species,
   air_date,
-  type
+  type,
 }: IInfoCardProps) => {
   return (
     <div className={styles.hero} onClick={onClick}>
       {image && <img className={styles.hero__image} src={image} alt={name} />}
-      <Button variant="text">
+      <Button variant='text'>
         <div className={styles.hero__name}>
           <Title>Name: {name}</Title>
           {species && <SubTitle>{species}</SubTitle>}

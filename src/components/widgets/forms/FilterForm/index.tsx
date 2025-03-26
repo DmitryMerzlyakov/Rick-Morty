@@ -74,7 +74,7 @@ export const FilterForm = ({ name, gender, status, species, type, dimension }: I
     <div className={styles.form}>
       {name &&
         <Input
-          inputPlaceholder="Filter by name..."
+          inputPlaceholder='Filter by name...'
           iconPlaceholder={<SearchImage />}
           {...register('name')}
         />
@@ -86,7 +86,7 @@ export const FilterForm = ({ name, gender, status, species, type, dimension }: I
               <Select
                 onChange={onChange}
                 options={optionsGender}
-                selectPlaceholder="Gender"
+                selectPlaceholder='Gender'
               />
             )}
             control={control}
@@ -99,7 +99,7 @@ export const FilterForm = ({ name, gender, status, species, type, dimension }: I
               <Select
                 onChange={onChange}
                 options={optionsStatus}
-                selectPlaceholder="Status"
+                selectPlaceholder='Status'
               />
             )}
             control={control}
@@ -112,7 +112,7 @@ export const FilterForm = ({ name, gender, status, species, type, dimension }: I
               <Select
                 onChange={onChange}
                 options={optionSpecies}
-                selectPlaceholder="Species"
+                selectPlaceholder='Species'
               />
             )}
             control={control}
@@ -125,7 +125,7 @@ export const FilterForm = ({ name, gender, status, species, type, dimension }: I
               <Select
                 onChange={onChange}
                 options={optionTypes}
-                selectPlaceholder="Type"
+                selectPlaceholder='Type'
               />
             )}
             control={control}
@@ -138,7 +138,7 @@ export const FilterForm = ({ name, gender, status, species, type, dimension }: I
               <Select
                 onChange={onChange}
                 options={optionDimension}
-                selectPlaceholder="Dimension"
+                selectPlaceholder='Dimension'
               />
             )}
             control={control}

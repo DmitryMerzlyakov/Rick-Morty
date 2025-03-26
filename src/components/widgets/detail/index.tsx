@@ -48,7 +48,7 @@ export const DetailInfo = () => {
           <div className={styles.detail__info}>
             <Button
               onClick={() => navigate(-1)}
-              variant="text"
+              variant='text'
               className={styles.detail__info_button}
             >
               <ArrowImage />
@@ -58,36 +58,36 @@ export const DetailInfo = () => {
               {'image' in data && data.image && (
                 <img
                   src={data.image}
-                  alt="Hero Image"
+                  alt='Hero Image'
                   className={styles.detail__info_person_image}
                 />
               )}
               {'name' in data && data.name && (
-                <Title fontWeight="700">{data.name}</Title>
+                <Title fontWeight='700'>{data.name}</Title>
               )}
               {location.state.type !== 'hero' &&
                 <div className={styles.detail__info_person_fields}>
                   {'episode' in data && data.episode && (
                     <div className={styles.detail__info_person_fields_wrapper}>
-                      <Title fontWeight="600">Episode:</Title>
+                      <Title fontWeight='600'>Episode:</Title>
                       <SubTitle>{data.episode}</SubTitle>
                     </div>
                   )}
                   {'type' in data && data.type && (
                     <div className={styles.detail__info_person_fields_wrapper}>
-                      <Title fontWeight="600">Type:</Title>
+                      <Title fontWeight='600'>Type:</Title>
                       <SubTitle>{data.type}</SubTitle>
                     </div>
                   )}
                   {'dimension' in data && data.dimension && (
                     <div className={styles.detail__info_person_fields_wrapper}>
-                      <Title fontWeight="600">Dimension:</Title>
+                      <Title fontWeight='600'>Dimension:</Title>
                       <SubTitle>{data.dimension}</SubTitle>
                     </div>
                   )}
                   {'air_date' in data && data.air_date && (
                     <div className={styles.detail__info_person_fields_wrapper}>
-                      <Title fontWeight="600">Created:</Title>
+                      <Title fontWeight='600'>Created:</Title>
                       <SubTitle>{data.air_date}</SubTitle>
                     </div>
                   )}

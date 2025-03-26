@@ -22,7 +22,7 @@ const LocationsPage = () => {
     <div className={styles.locations}>
       <PortalImage />
       <FilterForm name type dimension />
-      <PageWrapper display="grid">
+      <PageWrapper display='grid'>
         {data?.map((location) => (
           <InfoCard
             key={location.id}

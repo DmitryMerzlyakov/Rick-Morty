@@ -16,20 +16,20 @@ export const EpisodesById = ({ episodeId, data }: IEpisodesByIdProps) => {
   const { currentData } = useCurrentData();
   const { handleClickDetail } = useRouteDetail();
 
-  const dataById = currentData("episode", episodeId);
+  const dataById = currentData('episode', episodeId);
 
   return (
     <div className={styles.detail__episode}>
       <div className={styles.detail__episode_info}>
-        <Title fontWeight="600">Informations:</Title>
+        <Title fontWeight='600'>Informations:</Title>
         <div className={styles.detail__episode_info_fields}>
-          <Title fontWeight="300">Gender</Title>
+          <Title fontWeight='300'>Gender</Title>
           {'gender' in data && data.gender && (
             <SubTitle>{data.gender}</SubTitle>
           )}
         </div>
         <div className={styles.detail__episode_info_fields}>
-          <Title fontWeight="300">Status</Title>
+          <Title fontWeight='300'>Status</Title>
           {'status' in data && data.status && (
             <div className={styles.detail__episode_info_fields_img}>
               <SubTitle>{data.status}</SubTitle>
@@ -40,33 +40,33 @@ export const EpisodesById = ({ episodeId, data }: IEpisodesByIdProps) => {
           )}
         </div>
         <div className={styles.detail__episode_info_fields}>
-          <Title fontWeight="300">Specie</Title>
+          <Title fontWeight='300'>Specie</Title>
           {'species' in data && data.species && (
             <SubTitle>{data.species}</SubTitle>
           )}
         </div>
         <div className={styles.detail__episode_info_fields}>
-          <Title fontWeight="300">Origin</Title>
+          <Title fontWeight='300'>Origin</Title>
           {'origin' in data && data.origin && (
             <SubTitle>{data.origin.name}</SubTitle>
           )}
         </div>
         {'type' in data && data.type && (
           <div className={styles.detail__episode_info_fields}>
-            <Title fontWeight="300">Type</Title>
+            <Title fontWeight='300'>Type</Title>
             <SubTitle>{data.type}</SubTitle>
           </div>
         )}
       </div>
       <div className={styles.detail__episode_info}>
-        <Title fontWeight="600">Episode:</Title>
+        <Title fontWeight='600'>Episode:</Title>
         <div className={styles.detail__episode_info_wrapper}>
           <div className={styles.detail__episode_subinfo}>
             {Array.isArray(dataById) &&
               dataById.map((item) => (
                 <Button
                   key={item.id}
-                  variant="text"
+                  variant='text'
                   className={styles.detail__episode_info_fields}
                   onClick={() => handleClickDetail(item.id, 'episode')}
                 >

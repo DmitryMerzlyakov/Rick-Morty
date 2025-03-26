@@ -7,19 +7,19 @@ import { SubTitle } from '/src/components/ui/subtitle';
 
 interface IHeroesByIdProps {
   heroesId: number[];
-  resourse: "episode" | "location";
+  resourse: 'episode' | 'location';
 }
 
 export const HeroesById = ({ heroesId, resourse }: IHeroesByIdProps) => {
   const { currentData } = useCurrentData();
   const { handleClickDetail } = useRouteDetail();
 
-  const dataById = currentData("hero", heroesId);
+  const dataById = currentData('hero', heroesId);
 
   return (
     <div>
-      <SubTitle fontWeight="600">{resourse === "episode" ? "Cast" : "Residents"}</SubTitle>
-      <PageWrapper display="grid">
+      <SubTitle fontWeight='600'>{resourse === 'episode' ? 'Cast' : 'Residents'}</SubTitle>
+      <PageWrapper display='grid'>
         {Array.isArray(dataById) &&
           dataById.map((hero: IHero) => (
             <InfoCard

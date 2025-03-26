@@ -22,7 +22,7 @@ const EpisodesPage = () => {
     <div className={styles.episodes}>
       <LocationImage />
       <FilterForm name />
-      <PageWrapper display="grid">
+      <PageWrapper display='grid'>
         {data?.map((episode) => (
           <InfoCard
             key={episode.id}
