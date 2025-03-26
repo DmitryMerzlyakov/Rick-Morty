@@ -1,8 +1,8 @@
-import { Header } from '@/components/ui';
+import { Header } from '/src/components/ui';
 import { Outlet } from 'react-router-dom';
 
 import styles from './styles.module.scss';
-import { MortyImage, RickImage } from '@/assets/icons';
+import { MortyImage, RickImage } from '/src/assets/icons';
 
 export const MainLayout = () => {
   return (

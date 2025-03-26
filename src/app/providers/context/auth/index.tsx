@@ -1,6 +1,6 @@
-import { AuthContext } from '@/models/constants';
-import { IUser } from '@/models/interfaces';
 import { useState } from 'react';
+import { IUser } from '/src/models/interfaces';
+import { AuthContext } from '/src/models/constants';
 
 interface IAuthProviderProps {
   children: React.ReactNode;

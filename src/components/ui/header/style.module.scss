@@ -1,20 +1,19 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: var(--color-background);
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-md) 5%;
+  border-bottom: 3px solid var(--color-border);
 
-  &__logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    fill: var(--color-purple);
-  }
+  &__content {   
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm); 
+    justify-content: center;
 
-  &__user {
-    position: absolute;
-    top: 20px;
-    right: 70px;
+    &_logo {
+      fill: var(--color-text);
+    }
   }
 }

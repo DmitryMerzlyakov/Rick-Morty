@@ -2,15 +2,11 @@
 
 :root {
   /* --- Основные цвета --- */
-  --color-purple: #4d44b5;
-  --color-orange: #fb7d5b;
-  --color-yellow: #fcc43e;
-  --color-text: #303972;
-  --color-white: #fff;
-  --color-gray: #f5f5f5;
-  --color-gray-2: #c1bbeb;
-  --color-gray-3: #a098ae;
-  --color-background: #f3f4ff;
+  --color-hover: #1abed6;
+  --color-text: #0f1229;
+  --color-subtext: #969696;
+  --color-border: #cccbcc;
+  --color-background: #fff;
   --color-green: #4cbc9a;
   --color-red: #ff4550;
 
@@ -38,12 +34,7 @@
   --fontWeight-900: 900;
 
   /* --- Шрифты --- */
-  --fonts-Bold: 'Poppins-Bold', sans-serif; /* Основной шрифт */
-  --fonts-SemiBold: 'Poppins-SemiBold', sans-serif; /*  */
-  --fonts-Medium: 'Poppins-Medium', sans-serif; /* Поля ввода */
-  --fonts-Light: 'Poppins-Light', sans-serif; /* */
-  --fonts-ExtraLight: 'Poppins-ExtraLight', sans-serif; /* */
-  --fonts-Thin: 'Poppins-Thin', sans-serif; /* Подсказки */
+  --fonts-Bold: 'Karla', sans-serif;
 
   /* --- Отступы и размеры элементов --- */
   --spacing-xs: 0.25rem; /* Очень маленький отступ (4px) */
@@ -79,6 +70,8 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-subtext) var(--color-border);
 }
 
 body {
@@ -118,4 +111,23 @@ button {
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: var(--spacing-sm);
+  height: var(--spacing-sm);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-subtext);
+  border-radius: var(--border-radius-md);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-hover);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-border);
+  border-radius: var(--border-radius-md);
 }

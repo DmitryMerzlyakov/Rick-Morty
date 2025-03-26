@@ -2,11 +2,11 @@ import classNames from 'classnames';
 
 import styles from './style.module.scss';
 import { useNavigate } from 'react-router-dom';
-import { links } from '@/app/config/';
+import { links } from '/src/app/config/';
 import { Button } from '..';
-import { HeroImage } from '@/assets/icons';
-import { useAuth } from '@/hooks/useAuth';
-import { AuthContext } from '@/models/constants';
+import { HeroImage } from '/src/assets/icons';
+import { useAuth } from '/src/hooks/useAuth';
+import { AuthContext } from '/src/models/constants';
 
 interface IHeaderProps {
   /**
@@ -21,50 +21,50 @@ export const Header = ({ className }: IHeaderProps) => {
 
   return (
     <header className={classNames(styles.header, className)}>
-      <HeroImage size="xl" className={styles.header__logo} />
-      <div>
-        <Button
-          size="md"
-          variant="text"
-          color="purple"
-          onClick={() => navigate(links.main)}
-        >
-          Главная
-        </Button>
-        <Button
-          size="md"
-          variant="text"
-          color="purple"
-          onClick={() => navigate(links.heroes)}
-        >
-          Герои
-        </Button>
-        <Button
-          size="md"
-          variant="text"
-          color="purple"
-          onClick={() => navigate(links.location)}
-        >
-          Локации
-        </Button>
-        <Button
-          size="md"
-          variant="text"
-          color="purple"
-          onClick={() => navigate(links.episode)}
-        >
-          Эпизоды
-        </Button>
-      </div>
-      <div className={styles.header__user}>
+      <div className={styles.header__content}>
+        <HeroImage size='xl' className={styles.header__content_logo} />
         {auth.user?.name && (
           <Button
-            variant="text"
+            variant='text'
             onClick={() => auth.signOut(() => navigate(links.main))}
           >
             {auth.user?.nickName}
           </Button>
         )}
+      </div>
+      <div>
+        <Button
+          size='md'
+          variant='text'
+          color='purple'
+          onClick={() => navigate(links.main)}
+        >
+          Home
+        </Button>
+        <Button
+          size='md'
+          variant='text'
+          color='purple'
+          onClick={() => navigate(links.heroes)}
+        >
+          Heroes
+        </Button>
+        <Button
+          size='md'
+          variant='text'
+          color='purple'
+          onClick={() => navigate(links.locations)}
+        >
+          Locations
+        </Button>
+        <Button
+          size='md'
+          variant='text'
+          color='purple'
+          onClick={() => navigate(links.episodes)}
+        >
+          Episodes
+        </Button>
       </div>
     </header>
   );

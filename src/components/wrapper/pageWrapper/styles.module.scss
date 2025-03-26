@@ -1,7 +1,18 @@
-.wrapper {
+.wrapper__flex {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: var(--spacing-lg);
+  gap: var(--spacing-lg);
   justify-content: center;
+  margin: var(--spacing-lg) 0;
+}
+
+.wrapper__grid {
+  width: 100%;
+  display: grid;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  grid-template-rows: minmax(100px, 1fr);
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
 }

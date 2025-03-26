@@ -1,4 +1,4 @@
-## Wrappers folder (HOCs)
+## Widgets folder
 
 ### What's here?
 
