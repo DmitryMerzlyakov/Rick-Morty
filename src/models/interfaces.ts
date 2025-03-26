@@ -28,3 +28,14 @@ export interface IEpisode {
 export type TData = {
   [key: string]: string | number;
 };
+
+export interface IUser {
+  name: string;
+  nickName: string;
+}
+ 
+export interface IAuthProviderValue {
+  user: IUser | null;
+  signIn: (user: IUser, callback: () => void) => void;
+  signOut: (callback: () => void) => void;
+}

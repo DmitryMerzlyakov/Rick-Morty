@@ -11,4 +11,10 @@
     left: 20px;
     fill: var(--color-purple);
   }
+
+  &__user {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+  }
 }
