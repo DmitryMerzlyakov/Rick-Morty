@@ -1,0 +1,9 @@
+.heroes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+
+  &__button {
+    margin-bottom: var(--spacing-md);
+  }
+}

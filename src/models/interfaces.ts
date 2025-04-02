@@ -1,11 +1,15 @@
 export interface IHero {
   id: number;
   name: string;
-  status: string;
+  status: THeroStatus;
   species: string;
   type: string;
-  gender: string;
+  gender: THeroGender;
+  origin: { name: string; url: string };
+  location: { name: string; url: string };
   image: string;
+  episode: string[];
+  url: string;
   created: string;
 }
 
@@ -14,6 +18,8 @@ export interface ILocation {
   name: string;
   type: string;
   dimension: string;
+  residents: string[];
+  url: string[];
   created: string;
 }
 
@@ -21,7 +27,8 @@ export interface IEpisode {
   id: number;
   name: string;
   air_date: string;
-  episode: string;
+  characters: string[];
+  url: string;
   created: string;
 }
 
@@ -33,9 +40,41 @@ export interface IUser {
   name: string;
   nickName: string;
 }
- 
+
 export interface IAuthProviderValue {
   user: IUser | null;
   signIn: (user: IUser, callback: () => void) => void;
   signOut: (callback: () => void) => void;
+}
+
+export type TPageKeys =
+  | 'detailPage'
+  | 'episodesPage'
+  | 'errorPage'
+  | 'heroesPage'
+  | 'locationsPage'
+  | 'loginPage'
+  | 'mainPage';
+
+export type TApiResources = 'character' | 'location' | 'episode';
+
+export type ResourceType = 'hero' | 'location' | 'episode';
+
+export type THeroStatus = 'alive' | 'dead' | 'unknown';
+
+export type THeroGender = 'female' | 'male' | 'genderless' | 'unknown';
+
+export interface IGeneralQuery {
+  name?: string;
+  status?: THeroStatus;
+  species?: string;
+  type?: string;
+  gender?: THeroGender;
+  dimension?: string;
+  episode?: number | number[];
+}
+
+export interface IOption {
+  value: string;
+  label: string;
 }

@@ -1,0 +1,11 @@
+.locations {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--spacing-md);
+
+  &__button {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+  }
+}

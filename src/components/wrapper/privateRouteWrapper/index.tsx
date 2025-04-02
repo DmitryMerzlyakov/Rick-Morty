@@ -1,6 +1,6 @@
-import { links } from '@/app/config';
-import { useAuth } from '@/hooks/useAuth';
-import { AuthContext } from '@/models/constants';
+import { links } from '/src/app/config';
+import { useAuth } from '/src/hooks/useAuth';
+import { AuthContext } from '/src/models/constants';
 import { Navigate } from 'react-router-dom';
 
 interface PrivateRouteWrapperProps {

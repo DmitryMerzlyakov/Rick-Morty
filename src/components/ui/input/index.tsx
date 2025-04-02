@@ -47,51 +47,59 @@ export interface IInputProps {
    * The input value
    * */
   value?: string;
+  /**
+   * Placeholder's icon
+   * */
+  iconPlaceholder?: React.ReactNode
 }
 
-export const Input = React.forwardRef((
-  {
-    isError = false,
-    type = 'text',
-    value,
-    labelPosition = 'top',
-    onChange,
-    label,
-    hint,
-    inputPlaceholder,
-    id,
-    name,
-  }: IInputProps,
-  ref: React.ForwardedRef<HTMLInputElement>
-) => {
-  return (
-    <div
-      className={classNames(
-        styles.wrapper,
-        isError && styles.wrapperError,
-        styles[`labelPosition__${labelPosition}`],
-        !label && styles.labelHidden,
-        !hint && styles.hintHidden
-      )}
-    >
-      {label && (
-        <label className={styles.label} htmlFor={id}>
-          <p className={styles.label_text}>{label}</p>
-        </label>
-      )}
-      <div className={styles.input_wrapper}>
-        <input
-          className={styles.input}
-          name={name}
-          id={id}
-          onChange={onChange}
-          placeholder={inputPlaceholder}
-          type={type}
-          value={value}
-          ref={ref}
-        />
-        {hint && <span className={styles.input_hint}>{hint}</span>}
+export const Input = React.forwardRef(
+  (
+    {
+      isError = false,
+      iconPlaceholder,
+      type = 'text',
+      value,
+      labelPosition = 'top',
+      onChange,
+      label,
+      hint,
+      inputPlaceholder,
+      id,
+      name,
+    }: IInputProps,
+    ref: React.ForwardedRef<HTMLInputElement>
+  ) => {
+    return (
+      <div
+        className={classNames(
+          styles.wrapper,
+          isError && styles.wrapperError,
+          styles[`labelPosition__${labelPosition}`],
+          !label && styles.labelHidden,
+          !hint && styles.hintHidden
+        )}
+      >
+        {label && (
+          <label className={styles.label} htmlFor={id}>
+            <p className={styles.label_text}>{label}</p>
+          </label>
+        )}
+        <div className={styles.input_wrapper}>
+          <input
+            className={styles.input}
+            name={name}
+            id={id}
+            onChange={onChange}
+            placeholder={inputPlaceholder}
+            type={type}
+            value={value}
+            ref={ref}
+          />
+          <span className={styles.input_icon}>{iconPlaceholder}</span>
+          {hint && <span className={styles.input_hint}>{hint}</span>}
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);

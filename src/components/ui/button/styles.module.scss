@@ -48,18 +48,15 @@
     color: var(--color-background);
   }
 
-  &__purple {
-    color: var(--color-purple);
-  }
-
   &:disabled {
     cursor: auto;
-    background-color: var(--color-gray-3);
-    color: var(--color-gray-2);
+    background-color: var(  --color-border);
+    color: var(--color-border);
   }
 
   &:hover {
     font-weight: var(--fontWeight-700);
-    color: var(--color-orange);
+    color: var(--color-hover);
+    border-color: var(--color-hover);
   }
 }

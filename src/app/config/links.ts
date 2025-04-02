@@ -8,51 +8,46 @@ const error = '*';
 const login = 'login';
 
 /* Герои */
-const heroesNavigate = '/heroes/*';
 const heroes = 'heroes';
-const heroesDetail = '/heroes/detail';
-const heroesDetailById = '/heroes/detail/:id';
-
-/* Эпизоды */
-const episodeNavigate = '/episodes/*';
-const episode = 'episodes';
-const episodeDetail = '/episodes/detail';
-const episodeDetailById = '/episodes/detail/:id';
-
-
-/* Локации */
-const locationNavigate = '/locations/*';
-const location = 'locations';
-const locationDetail = '/locations/detail';
-const locationDetailById = '/locations/detail/:id';
-
+const heroesDetail = 'heroes/detail';
+const heroesDetailById = 'heroes/detail/:id';
 
 const heroesLinks = {
-  heroesNavigate,
   heroes,
   heroesDetail,
-  heroesDetailById
+  heroesDetailById,
 };
 
-const episodeLinks = {
-  episodeNavigate,
-  episode,
-  episodeDetail,
-  episodeDetailById
+/* Эпизоды */
+const episodes = 'episodes';
+const episodesDetail = 'episodes/detail';
+const episodesDetailById = 'episodes/detail/:id';
+
+const episodesLinks = {
+  episodes,
+  episodesDetail,
+  episodesDetailById,
 };
 
-const locationLinks = {
-  locationNavigate,
-  location,
-  locationDetail,
-  locationDetailById
+/* Локации */
+const locations = 'locations';
+const locationsDetail = 'locations/detail';
+const locationsDetailById = 'locations/detail/:id';
+
+const locationsLinks = {
+  locations,
+  locationsDetail,
+  locationsDetailById,
 };
+
+const detail = 'detail';
 
 export const links = {
   ...heroesLinks,
-  ...episodeLinks,
-  ...locationLinks,
+  ...episodesLinks,
+  ...locationsLinks,
+  detail,
   error,
   main,
-  login
+  login,
 };

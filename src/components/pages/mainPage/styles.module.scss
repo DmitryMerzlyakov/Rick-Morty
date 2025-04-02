@@ -5,4 +5,9 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+
+  &__img {
+    width: 500px;
+    height: 150px;
+  }
 }
