@@ -18,25 +18,19 @@ export const DetailInfo = () => {
 
   const data = currentData(location.state.type, location.state.id);
 
+  const fillingId = (dataArr: string[], returnArr: number[]) => {
+    dataArr.forEach((item: string) =>
+      returnArr.push(Number(item.split('/').at(-1)))
+    );
+
+    return returnArr
+  }
+
   useEffect(() => {
     const acumIdArr: number[] = [];
-    if (location.state.type === 'hero' && data && 'episode' in data) {
-      data.episode.forEach((episod) =>
-        acumIdArr.push(Number(episod.split('/').at(-1)))
-      );
-    }
-
-    if (location.state.type === 'location' && data && 'residents' in data) {
-      data.residents.forEach((resident) =>
-        acumIdArr.push(Number(resident.split('/').at(-1)))
-      );
-    }
-
-    if (location.state.type === 'episode' && data && 'characters' in data) {
-      data.characters.forEach((character) =>
-        acumIdArr.push(Number(character.split('/').at(-1)))
-      );
-    }
+    if (location.state.type === 'hero' && data && 'episode' in data) fillingId(data.episode, acumIdArr)
+    if (location.state.type === 'location' && data && 'residents' in data) fillingId(data.residents, acumIdArr)
+    if (location.state.type === 'episode' && data && 'characters' in data) fillingId(data.characters, acumIdArr)
 
     setDetailArrId(acumIdArr);
   }, [data, location.state.type]);
