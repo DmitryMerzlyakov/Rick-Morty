@@ -32,10 +32,6 @@ export interface IEpisode {
   created: string;
 }
 
-export type TData = {
-  [key: string]: string | number;
-};
-
 export interface IUser {
   name: string;
   nickName: string;
@@ -46,15 +42,6 @@ export interface IAuthProviderValue {
   signIn: (user: IUser, callback: () => void) => void;
   signOut: (callback: () => void) => void;
 }
-
-export type TPageKeys =
-  | 'detailPage'
-  | 'episodesPage'
-  | 'errorPage'
-  | 'heroesPage'
-  | 'locationsPage'
-  | 'loginPage'
-  | 'mainPage';
 
 export type TApiResources = 'character' | 'location' | 'episode';
 

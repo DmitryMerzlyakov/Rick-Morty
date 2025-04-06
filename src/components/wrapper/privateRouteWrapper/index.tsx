@@ -10,9 +10,7 @@ interface PrivateRouteWrapperProps {
 export const PrivateRouteWrapper = ({ children }: PrivateRouteWrapperProps) => {
   const auth = useAuth({ context: AuthContext });
 
-  if (auth.user === null) {
-    return <Navigate to={`/${links.login}`} />;
-  }
+  if (auth.user === null) return <Navigate to={`/${links.login}`} />;
 
   return children;
 };
