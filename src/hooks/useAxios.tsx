@@ -1,13 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { BASE_URL } from '/src/models/constants';
-import {
-  IEpisode,
-  IGeneralQuery,
-  IHero,
-  ILocation,
-  TApiResources,
-} from '/src/models/interfaces';
+import { IEpisode, IGeneralQuery, IHero, ILocation, TApiResources } from '/src/models/interfaces';
 
 interface ResourceMap {
   character: IHero[];

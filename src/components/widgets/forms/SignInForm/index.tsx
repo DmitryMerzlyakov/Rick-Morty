@@ -10,11 +10,7 @@ import { links } from '/src/app/config';
 export const SignInForm = () => {
   const navigate = useNavigate();
   const auth = useAuth({ context: AuthContext });
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<IUser>();
+  const { register, handleSubmit, formState: { errors } } = useForm<IUser>();
 
   const onSubmit: SubmitHandler<IUser> = (data) => {
     auth.signIn(data, () => navigate(`${links.main}`));

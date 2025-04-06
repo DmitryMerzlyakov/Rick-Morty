@@ -1,10 +1,11 @@
 import { SearchImage } from '/src/assets/icons';
 import { Input, Select } from '/src/components/ui';
 import { useSearchQueryParams } from '/src/hooks/useSearch';
-import { IGeneralQuery, IOption } from '/src/models/interfaces';
+import { IGeneralQuery } from '/src/models/interfaces';
 import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import styles from './styles.module.scss';
+import { optionsGender, optionsStatus, optionSpecies, optionTypes, optionDimension } from '/src/models/constants';
 
 interface IFilterFormProps {
   name?: boolean;
@@ -31,44 +32,6 @@ export const FilterForm = ({ name, gender, status, species, type, dimension }: I
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [watch(['name', 'gender', 'status', 'species', 'type', 'dimension']).join('')]);
-
-  const optionsGender: IOption[] = [
-    { value: 'female', label: 'Female' },
-    { value: 'male', label: 'Male' },
-    { value: 'genderless', label: 'Genderless' },
-    { value: 'unknown', label: 'Unknown' },
-  ];
-
-  const optionsStatus: IOption[] = [
-    { value: 'alive', label: 'Alive' },
-    { value: 'dead', label: 'Dead' },
-    { value: 'unknown', label: 'Unknown' },
-  ];
-
-  const optionSpecies: IOption[] = [
-    { value: 'Human', label: 'Human' },
-    { value: 'Alien', label: 'Alien' },
-    { value: 'Cronenberg', label: 'Cronenberg' },
-    { value: 'Robot', label: 'Robot' }
-  ]
-
-  const optionTypes: IOption[] = [
-    { value: 'Planet', label: 'Planet' },
-    { value: 'Resort', label: 'Resort' },
-    { value: 'Dream', label: 'Dream' },
-    { value: 'TV', label: 'TV' },
-    { value: 'Space station', label: 'Space station' },
-    { value: 'unknown', label: 'Unknown' },
-  ]
-
-  const optionDimension: IOption[] = [
-    { value: 'Dimension C-137', label: 'Dimension C-137' },
-    { value: 'Post-Apocalyptic Dimension', label: 'Post-Apocalyptic Dimension' },
-    { value: 'Replacement Dimension', label: 'Replacement Dimension' },
-    { value: 'Cronenberg Dimension', label: 'Cronenberg Dimension' },
-    { value: 'Fantasy Dimension', label: 'Fantasy Dimension' },
-    { value: 'unknown', label: 'Unknown' },
-  ]
 
   return (
     <div className={styles.form}>

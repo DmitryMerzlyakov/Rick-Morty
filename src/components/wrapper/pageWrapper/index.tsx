@@ -6,10 +6,7 @@ type TPageWrapperProps = {
   children: React.ReactNode;
 };
 
-export const PageWrapper = ({
-  children,
-  display = 'flex',
-}: TPageWrapperProps) => {
+export const PageWrapper = ({ children, display = 'flex' }: TPageWrapperProps) => {
   return (
     <div className={classNames(styles[`wrapper__${display}`])}>{children}</div>
   );
