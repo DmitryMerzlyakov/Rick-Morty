@@ -6,14 +6,24 @@
   padding: var(--spacing-md) 5%;
   border-bottom: 3px solid var(--color-border);
 
-  &__content {   
+  &__content {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm); 
+    gap: var(--spacing-sm);
     justify-content: center;
 
     &_logo {
       fill: var(--color-text);
     }
   }
+}
+
+.header .header__select {
+  width: 50%;
+  border: none;
+  color: var(--color-text);
+}
+
+.header .header__select svg path {
+  fill-opacity: 1;
 }
