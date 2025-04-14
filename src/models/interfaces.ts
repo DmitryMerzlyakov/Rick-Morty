@@ -64,4 +64,5 @@ export interface IGeneralQuery {
 export interface IOption {
   value: string;
   label: string;
+  link?: string;
 }

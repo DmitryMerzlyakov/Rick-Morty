@@ -3,10 +3,11 @@ import classNames from 'classnames';
 import styles from './style.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { links } from '/src/app/config/';
-import { Button } from '..';
+import { Button, Select } from '..';
 import { HeroImage } from '/src/assets/icons';
 import { useAuth } from '/src/hooks/useAuth';
-import { AuthContext } from '/src/models/constants';
+import { AuthContext, optionHeader } from '/src/models/constants';
+import { useWindowSize } from 'usehooks-ts';
 
 interface IHeaderProps {
   /**
@@ -16,8 +17,23 @@ interface IHeaderProps {
 }
 
 export const Header = ({ className }: IHeaderProps) => {
+
   const navigate = useNavigate();
+  const { width } = useWindowSize();
   const auth = useAuth({ context: AuthContext });
+
+  const handleClickNavigate = (value: string) => {
+    switch (value) {
+      case 'episodes':
+        return links.episodes
+      case 'locations':
+        return links.locations
+      case 'heroes':
+        return links.heroes
+      default:
+        return links.main
+    }
+  }
 
   return (
     <header className={classNames(styles.header, className)}>
@@ -32,40 +48,31 @@ export const Header = ({ className }: IHeaderProps) => {
           </Button>
         )}
       </div>
-      <div>
-        <Button
-          size='md'
-          variant='text'
-          color='purple'
-          onClick={() => navigate(links.main)}
-        >
-          Home
-        </Button>
-        <Button
-          size='md'
-          variant='text'
-          color='purple'
-          onClick={() => navigate(links.heroes)}
-        >
-          Heroes
-        </Button>
-        <Button
-          size='md'
-          variant='text'
-          color='purple'
-          onClick={() => navigate(links.locations)}
-        >
-          Locations
-        </Button>
-        <Button
-          size='md'
-          variant='text'
-          color='purple'
-          onClick={() => navigate(links.episodes)}
-        >
-          Episodes
-        </Button>
-      </div>
+      {
+        width >= 768 ?
+          <span>
+            {
+              optionHeader.map((option, index) =>
+                <Button
+                  key={index}
+                  size='md'
+                  variant='text'
+                  color='purple'
+                  onClick={() => navigate(option.link as string)}
+                >
+                  {option.label}
+                </Button>
+              )
+            }
+          </span>
+          :
+          <Select
+            options={optionHeader}
+            className={styles.header__select}
+            selectPlaceholder={`${width > 375 ? 'Choose page' : 'Page'}`}
+            onChange={(value) => handleClickNavigate(value as string)}
+          />
+      }
     </header>
   );
 };

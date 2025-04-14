@@ -1,5 +1,6 @@
 import { createContext, lazy } from 'react';
 import { IAuthProviderValue, IOption } from './interfaces';
+import { links } from '../app/config';
 
 export const BASE_URL = 'https://rickandmortyapi.com/api';
 
@@ -48,4 +49,11 @@ export const optionDimension: IOption[] = [
   { value: 'Cronenberg Dimension', label: 'Cronenberg Dimension' },
   { value: 'Fantasy Dimension', label: 'Fantasy Dimension' },
   { value: 'unknown', label: 'Unknown' },
+];
+
+export const optionHeader: IOption[] = [
+  { value: 'main', label: 'Home', link: '/' },
+  { value: 'episodes', label: 'Episodes', link: links.episodes },
+  { value: 'locations', label: 'Locations', link: links.locations },
+  { value: 'heroes', label: 'Heroes', link: links.heroes },
 ];
