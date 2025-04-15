@@ -1,1 +1,0 @@
-import{j as e,c as p}from"./index-Dsy7ntS-.js";const s="_wrapper__flex_ocruw_1",a="_wrapper__grid_ocruw_11",o={wrapper__flex:s,wrapper__grid:a},c=({children:r,display:_="flex"})=>e.jsx("div",{className:p(o[`wrapper__${_}`]),children:r});export{c as P};
