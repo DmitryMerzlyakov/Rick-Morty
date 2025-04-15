@@ -5,5 +5,6 @@ export default defineConfig({
     build: {
         outDir: 'dist',
     },
+    base: '/rick-morty/',
     plugins: [react()],
 });
