@@ -15,33 +15,33 @@ export const AppRoutes = () => {
           <Route
             path={links.heroes}
             element={
-              <PrivateRouteWrapper>
+              // <PrivateRouteWrapper>
                 <LazyHeroesPage />
-              </PrivateRouteWrapper>
+              //</PrivateRouteWrapper>
             }
           />
           <Route
             path={links.locations}
             element={
-              <PrivateRouteWrapper>
+              //<PrivateRouteWrapper>
                 <LazyLocationsPage />
-              </PrivateRouteWrapper>
+              //</PrivateRouteWrapper>
             }
           />
           <Route
             path={links.episodes}
             element={
-              <PrivateRouteWrapper>
+              //<PrivateRouteWrapper>
                 <LazyEpisodesPage />
-              </PrivateRouteWrapper>
+              //</PrivateRouteWrapper>
             }
           />
           <Route
             path={`:resource/${links.detail}/:id`}
             element={
-              <PrivateRouteWrapper>
+              //<PrivateRouteWrapper>
                 <LazyDetailPage />
-              </PrivateRouteWrapper>
+              //</PrivateRouteWrapper>
             }
           />
         </Route>

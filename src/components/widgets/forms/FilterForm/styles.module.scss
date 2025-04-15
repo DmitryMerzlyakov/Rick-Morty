@@ -10,3 +10,9 @@
     gap: var(--spacing-sm);
   }
 }
+
+@media (max-width: 1023px)  {
+  .form__selects {
+    flex-direction: column;
+  }
+}

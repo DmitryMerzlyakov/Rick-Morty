@@ -16,3 +16,27 @@
   grid-template-rows: minmax(100px, 1fr);
   grid-template-columns: repeat(4, minmax(200px, 1fr));
 }
+
+@media (max-width: 1679px) {
+  .wrapper__grid {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 1439px) {
+  .wrapper__grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 959px) {
+  .wrapper__flex {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapper__grid {
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+}

@@ -70,7 +70,7 @@ export const Header = ({ className }: IHeaderProps) => {
             options={optionHeader}
             className={styles.header__select}
             selectPlaceholder={`${width > 375 ? 'Choose page' : 'Page'}`}
-            onChange={(value) => handleClickNavigate(value as string)}
+            onChange={(value) => navigate(handleClickNavigate(value as string))}
           />
       }
     </header>

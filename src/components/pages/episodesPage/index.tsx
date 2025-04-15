@@ -15,7 +15,6 @@ const EpisodesPage = () => {
   const { useAxiosGet } = useAxios();
   const { getSearchData } = useSearchQueryParams();
   const [currentPage, setCurrentPage] = useState<number>(1);
-
   const { data } = useAxiosGet('episode', currentPage, getSearchData());
 
   return (
