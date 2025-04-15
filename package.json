@@ -1,9 +1,9 @@
 {
+  "homepage": "https://dmitrymerzlyakov.github.io/Rick-Morty/",
   "name": "rick-morty",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://dmitrymerzlyakov.github.io/Rick-Morty/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
